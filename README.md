@@ -4,4 +4,4 @@ Here you can find the guidelines on how to use the new society identity, and tem
 
 This site is ported from Google Sites in 2021 due to the migration of HKU Connect from Google to Microsoft.
 
-Access the portal on https://awcaxttrgr.github.io/lingsoc_aahkusu-branding/
+In the future, a more accessible page will be available on https://awcaxttrgr.github.io/lingsoc_aahkusu-branding/, but for now please bear with the GitHub repository.

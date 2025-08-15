@@ -1,0 +1,32 @@
+The Linguistics Society’s visual identity revolves around its logotype, which combines two core elements: the Globe and the Signature. The primary lock-up is the default and preferred version, featuring a horizontal arrangement of the Globe and Signature. It should be used whenever possible across publications, banners, and digital media. When horizontal space is limited, the secondary lock-up, which stacks the Globe and Signature vertically, is allowed.
+
+Language variants include English, Chinese, and bilingual versions. English is preferred unless context requires Chinese or both.
+
+Several colour and background variants exist:
+
+Standard full-colour: Always preferred when colour printing is possible.
+Negative variant: For dark, complex, or vibrant backgrounds where the standard version lacks contrast.
+Greyscale variant: For black-and-white printing, ensuring clarity without halftone effects.
+Monochromatic variant: For single-colour designs, where the logotype is adapted to one colour from the palette.
+
+Additional adaptations include:
+
+Session suffix: The logotype can include a session period using Fira Sans Bold (English) or Noto Sans CJK TC Medium (Chinese), aligned according to templates.
+
+
+File Format Guidelines
+The manual specifies which file format to use based on purpose and software:
+
+By Purpose
+Banners/signs: EPS (recommended), SVG (alternative)
+Online images: SVG (recommended), PNG (alternative)
+Promotion materials: EPS or SVG (recommended)
+Slideshow (PowerPoint): EMF (recommended), PNG/JPG (alternatives)
+Documents (Word): EMF (recommended), PNG/JPG (alternatives)
+Video/QuickTime: EPS (recommended), PNG/JPG (alternatives)
+By Software
+Adobe Illustrator / InDesign / Photoshop: EPS (recommended)
+Microsoft Word / PowerPoint (2016): EMF (recommended)
+Web publishing: SVG (recommended)
+Older MS Office versions: PNG or JPG (alternatives)
+General rule: Use vector formats (EPS, SVG, EMF) whenever possible for scalability and quality. Raster formats (PNG, JPG) are for web or quick-use scenarios.

@@ -1,6 +1,10 @@
 # Path to the CSV file
 $csvPath = ".\tools\naming_scheme_pairs.csv"
 
+# Error log file path
+$errorLogPath = "rename_errors.log"
+if (Test-Path $errorLogPath) { Remove-Item $errorLogPath }
+
 # Read the CSV into an array of objects
 $mapping = Import-Csv -Path $csvPath -Header Old,New
 
@@ -15,7 +19,13 @@ Get-ChildItem -Recurse -File | ForEach-Object {
     }
     if ($newName -ne $file.Name) {
         $newPath = Join-Path -Path $file.DirectoryName -ChildPath $newName
-        Rename-Item -Path $file.FullName -NewName $newPath
-        Write-Host "Renamed '$($file.FullName)' to '$newPath'"
+        try {
+            Rename-Item -Path $file.FullName -NewName $newPath -ErrorAction Stop
+            Write-Host "Renamed '$($file.FullName)' to '$newPath'"
+        } catch {
+            $errMsg = "Failed to rename '$($file.FullName)' to '$newPath': $($_.Exception.Message)"
+            Write-Host $errMsg -ForegroundColor Red
+            Add-Content -Path $errorLogPath -Value $errMsg
+        }
     }
 }

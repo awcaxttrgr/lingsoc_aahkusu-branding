@@ -1,0 +1,22 @@
+# Normalize text files by default
+* text=auto
+
+# Ensure PowerShell scripts use CRLF on Windows
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 text eol=crlf
+*.psm1 text eol=crlf
+*.bat text eol=crlf
+
+# Shell scripts keep LF
+*.sh text eol=lf
+
+# Images and binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.ai binary
+*.eps binary
+*.svg binary

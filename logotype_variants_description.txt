@@ -15,6 +15,9 @@ Session suffix: The logotype can include a session period using Fira Sans Bold (
 
 In summary, the logotypes are selected with three parameters: arrangement (primary/secondary), language (English/Chinese/bilingual), and colour/background variant (standard/negative/greyscale/monochromatic). This ensures consistent and appropriate use of the logotype across all applications.
 
+Logotype file naming convention: [Arrangement]-[ColourVariant]-[LanguageVariant][ -SessionSuffix]
+e.g. 1-greyscale-bi-session
+
 File Format Guidelines
 The manual specifies which file format to use based on purpose and software:
 

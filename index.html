@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linguistics Society Branding Resources</title>
+    <style>
+        :root {
+            --england-red: #F93822;
+            --island-green: #71CC98;
+            --victoria-blue: #41B6E6;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--england-red), var(--victoria-blue));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .section {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: var(--victoria-blue);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--island-green);
+            font-size: 1.8em;
+        }
+        
+        .section h3 {
+            color: var(--england-red);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--bg-light);
+            border-radius: 6px;
+            border-left: 4px solid var(--victoria-blue);
+        }
+        
+        .step h4 {
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        button, .btn {
+            background-color: var(--victoria-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        button:hover, .btn:hover {
+            background-color: var(--england-red);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        button.active {
+            background-color: var(--island-green);
+            font-weight: bold;
+        }
+        
+        button.secondary {
+            background-color: var(--text-light);
+        }
+        
+        button.secondary:hover {
+            background-color: var(--text-dark);
+        }
+        
+        .result-box {
+            background-color: #e7f5ff;
+            border: 2px solid var(--victoria-blue);
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .result-box.show {
+            display: block;
+        }
+        
+        .result-box h3 {
+            color: var(--victoria-blue);
+            margin-top: 0;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: white;
+            padding: 20px;
+        }
+        
+        .download-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .download-links a {
+            background-color: var(--island-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .download-links a:hover {
+            background-color: var(--england-red);
+            transform: translateY(-2px);
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 800px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .download-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .download-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .download-card h4 {
+            color: var(--victoria-blue);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .download-card p {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .download-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .prominent {
+            border: 2px solid var(--england-red);
+            background: linear-gradient(135deg, rgba(249, 56, 34, 0.05), rgba(65, 182, 230, 0.05));
+        }
+        
+        .prominent h4 {
+            color: var(--england-red);
+            font-size: 1.2em;
+        }
+        
+        .info-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-box strong {
+            color: #856404;
+        }
+        
+        .category-section {
+            margin-bottom: 30px;
+        }
+        
+        .category-section h3 {
+            color: var(--victoria-blue);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--island-green);
+        }
+        
+        #logoSelector {
+            display: none;
+        }
+        
+        #logoSelector.show {
+            display: block;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            header p {
+                font-size: 1em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Linguistics Society Branding Resources</h1>
+            <p>Visual Identity, Logotypes & Brand Assets</p>
+        </header>
+
+        <!-- Logotype Selector Section -->
+        <div class="section">
+            <h2>📋 Logotype Selector</h2>
+            <p style="margin-bottom: 20px;">Select the appropriate logotype variant through our step-by-step process.</p>
+            
+            <!-- Version Selection -->
+            <div class="step" id="versionStep">
+                <h4>Step 1: Select Version</h4>
+                <div class="button-group">
+                    <button onclick="selectVersion('2024')">2024</button>
+                    <button onclick="selectVersion('2024-AA')">2024 (AA)</button>
+                    <button onclick="selectVersion('2021')">2021</button>
+                    <button onclick="selectVersion('Legacy')">Legacy</button>
+                </div>
+            </div>
+            
+            <!-- Logo Selection Steps (Hidden initially) -->
+            <div id="logoSelector">
+                <!-- Arrangement Selection -->
+                <div class="step" id="arrangementStep">
+                    <h4>Step 2: Select Arrangement</h4>
+                    <div class="button-group">
+                        <button onclick="selectArrangement('1')">Primary (Horizontal)</button>
+                        <button onclick="selectArrangement('2')">Secondary (Vertical)</button>
+                    </div>
+                </div>
+                
+                <!-- Language Selection -->
+                <div class="step" id="languageStep">
+                    <h4>Step 3: Select Language</h4>
+                    <div class="button-group">
+                        <button onclick="selectLanguage('en')">English</button>
+                        <button onclick="selectLanguage('zh')">Chinese</button>
+                        <button onclick="selectLanguage('bi')">Bilingual</button>
+                    </div>
+                </div>
+                
+                <!-- Color Variant Selection -->
+                <div class="step" id="colorStep">
+                    <h4>Step 4: Select Color Variant</h4>
+                    <div class="button-group">
+                        <button onclick="selectColor('standard')">Standard (Full Color)</button>
+                        <button onclick="selectColor('negative')">Negative (Dark Backgrounds)</button>
+                        <button onclick="selectColor('greyscale')">Greyscale (B&W Print)</button>
+                        <button onclick="selectColor('monochrome')">Monochromatic</button>
+                    </div>
+                </div>
+                
+                <!-- Session Selection -->
+                <div class="step" id="sessionStep">
+                    <h4>Step 5: Include Session Period?</h4>
+                    <div class="button-group">
+                        <button onclick="selectSession(true)">Yes, with Session</button>
+                        <button onclick="selectSession(false)">No Session</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Result Display -->
+            <div class="result-box" id="resultBox">
+                <h3>📥 Selected Logotype</h3>
+                <p id="selectionSummary"></p>
+                <img id="previewImage" class="preview-image" alt="Logo Preview" />
+                <div class="download-links" id="downloadLinks"></div>
+            </div>
+        </div>
+
+        <!-- Visual Identity Manual Section -->
+        <div class="section">
+            <h2>📖 Visual Identity Manual</h2>
+            <p style="margin-bottom: 20px;">Quick Reference Guide (2025 August)</p>
+            <iframe class="pdf-viewer" src="VIM/Visual Identity Manual - Quick Reference (2025 Aug).pdf" type="application/pdf"></iframe>
+        </div>
+
+        <!-- Downloads Section -->
+        <div class="section">
+            <h2>💾 Download Resources</h2>
+            
+            <!-- Visual Identity Manuals -->
+            <div class="category-section">
+                <h3>📚 Visual Identity Manuals</h3>
+                <div class="download-grid">
+                    <div class="download-card prominent">
+                        <h4>Visual Identity Manual (2025 Aug)</h4>
+                        <p>Complete guide to the Linguistics Society visual identity - Latest version</p>
+                        <a href="VIM/Visual Identity Manual (2025 Aug).pdf" class="btn" download>Download PDF</a>
+                    </div>
+                    <div class="download-card prominent">
+                        <h4>Style Guide (2019 Jan)</h4>
+                        <p>Legacy style guide with historical brand guidelines</p>
+                        <a href="Legacy/LingSoc_StyleGuide_2019Jan.pdf" class="btn" download>Download PDF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Quick Reference (2025 Aug)</h4>
+                        <p>Condensed quick reference guide for everyday use</p>
+                        <a href="VIM/Visual Identity Manual - Quick Reference (2025 Aug).pdf" class="btn" download>Download PDF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Visual Identity Manual (2020 Jan)</h4>
+                        <p>Previous version of the visual identity manual</p>
+                        <a href="VIM/Visual Identity Manual (2020 Jan).pdf" class="btn" download>Download PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fonts -->
+            <div class="category-section">
+                <h3>🔤 Font Files</h3>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <h4>Andika IPA Regular</h4>
+                        <p>Custom IPA font for linguistic content</p>
+                        <a href="Legacy/Andika-IPALingSocAAKHUSU/Andika-IPA_LingSocAAHKUSU-R.ttf" class="btn" download>Download TTF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Andika New Basic Regular</h4>
+                        <p>Basic Andika font - Regular weight</p>
+                        <a href="Legacy/Andika-IPALingSocAAKHUSU/AndikaNewBasic-LingSocAAHKUSU-R.ttf" class="btn" download>Download TTF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Andika New Basic Bold</h4>
+                        <p>Basic Andika font - Bold weight</p>
+                        <a href="Legacy/Andika-IPALingSocAAKHUSU/AndikaNewBasic-LingSocAAHKUSU-B.ttf" class="btn" download>Download TTF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Andika New Basic Italic</h4>
+                        <p>Basic Andika font - Italic style</p>
+                        <a href="Legacy/Andika-IPALingSocAAKHUSU/AndikaNewBasic-LingSocAAHKUSU-I.ttf" class="btn" download>Download TTF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Andika New Basic Bold Italic</h4>
+                        <p>Basic Andika font - Bold Italic style</p>
+                        <a href="Legacy/Andika-IPALingSocAAKHUSU/AndikaNewBasic-LingSocAAHKUSU-BI.ttf" class="btn" download>Download TTF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Font Documentation</h4>
+                        <p>README and font log files</p>
+                        <a href="Legacy/Andika-IPALingSocAAKHUSU/README.txt" class="btn" download>Download README</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icons -->
+            <div class="category-section">
+                <h3>🎨 Icons & Graphics</h3>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <h4>Upstairs Icon</h4>
+                        <p>SVG icon for upstairs direction</p>
+                        <a href="Legacy/lingsoc-icons/upstairs.svg" class="btn" download>Download SVG</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Downstairs Icon</h4>
+                        <p>SVG icon for downstairs direction</p>
+                        <a href="Legacy/lingsoc-icons/downstairs.svg" class="btn" download>Download SVG</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Lift/Elevator Icon</h4>
+                        <p>SVG icon for lift/elevator</p>
+                        <a href="Legacy/lingsoc-icons/lift.svg" class="btn" download>Download SVG</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Escalator Up Icon</h4>
+                        <p>SVG icon for escalator going up</p>
+                        <a href="Legacy/lingsoc-icons/escalatorup.svg" class="btn" download>Download SVG</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Escalator Down Icon</h4>
+                        <p>SVG icon for escalator going down</p>
+                        <a href="Legacy/lingsoc-icons/escalatordown.svg" class="btn" download>Download SVG</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Enquiries Icon</h4>
+                        <p>SVG icon for enquiries/information</p>
+                        <a href="Legacy/lingsoc-icons/enquiries.svg" class="btn" download>Download SVG</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Letterheads -->
+            <div class="category-section">
+                <h3>📄 Letterhead Templates</h3>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <h4>AA Letterhead (Portrait BW)</h4>
+                        <p>Portrait orientation, black & white, no color, no font embedding</p>
+                        <a href="Legacy/lingsoc-letterhead/Linguistics Society, AA Letterhead (Portrait BW NoColour NoFont).dotx" class="btn" download>Download DOTX</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>AA Letterhead (Landscape BW)</h4>
+                        <p>Landscape orientation, black & white, no font embedding</p>
+                        <a href="Legacy/lingsoc-letterhead/Linguistics Society, AA Letterhead (Landscape BW NoFont).dotx" class="btn" download>Download DOTX</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>AAHKUSU Letterhead (Portrait BW)</h4>
+                        <p>Portrait orientation, black & white, no color, no font embedding</p>
+                        <a href="Legacy/lingsoc-letterhead/Linguistics Society, AAHKUSU Letterhead (Portrait BW NoColour NoFont).dotx" class="btn" download>Download DOTX</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>AAHKUSU Letterhead (Portrait Color)</h4>
+                        <p>Portrait orientation, color version, no font embedding</p>
+                        <a href="Legacy/lingsoc-letterhead/Linguistics Society, AAHKUSU Letterhead (Portrait Colour NoFont).dotx" class="btn" download>Download DOTX</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>AAHKUSU Letterhead (Landscape BW)</h4>
+                        <p>Landscape orientation, black & white, no font embedding</p>
+                        <a href="Legacy/lingsoc-letterhead/Linguistics Society, AAHKUSU Letterhead (Landscape BW NoFont).dotx" class="btn" download>Download DOTX</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>AAHKUSU Letterhead (Landscape Color)</h4>
+                        <p>Landscape orientation, color version, no font embedding</p>
+                        <a href="Legacy/lingsoc-letterhead/Linguistics Society, AAHKUSU Letterhead (Landscape Colour NoFont).dotx" class="btn" download>Download DOTX</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Constitution & Legal Documents -->
+            <div class="category-section">
+                <h3>📜 Constitution & Legal Documents</h3>
+                <div class="download-grid">
+                    <div class="download-card prominent">
+                        <h4>Constitution (November 2018)</h4>
+                        <p>Official constitution of the Linguistics Society</p>
+                        <a href="Legacy/LIN_AA_Constitution_291118.pdf" class="btn" download>Download PDF</a>
+                    </div>
+                    <div class="download-card prominent">
+                        <h4>Constitution (Annotated)</h4>
+                        <p>Annotated version with comments and notes</p>
+                        <a href="Legacy/LIN_AA_Constitution_291118-annotated.pdf" class="btn" download>Download PDF</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Constitution Source Code</h4>
+                        <p>LaTeX source code for the constitution</p>
+                        <a href="Legacy/Restricted downloads/lingsoc-constitution-sourcecode/" class="btn" target="_blank">View Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="category-section">
+                <h3>🎯 Additional Resources</h3>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <h4>PowerPoint Template</h4>
+                        <p>Presentation template for Linguistics Society</p>
+                        <a href="Legacy/Linguistics Society, AAHKUSU (Template).potx" class="btn" download>Download POTX</a>
+                    </div>
+                    <div class="download-card">
+                        <h4>Favicon Package</h4>
+                        <p>Website favicons in multiple sizes</p>
+                        <a href="Legacy/favicons.zip" class="btn" download>Download ZIP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; padding: 20px; color: var(--text-light); border-top: 2px solid var(--border-color); margin-top: 40px;">
+            <p>&copy; Linguistics Society, AAHKUSU. All rights reserved.</p>
+            <p style="margin-top: 10px;">Colors: <span style="color: var(--england-red);">■</span> England Red #F93822 | 
+            <span style="color: var(--island-green);">■</span> Island Green #71CC98 | 
+            <span style="color: var(--victoria-blue);">■</span> Victoria Blue #41B6E6</p>
+        </footer>
+    </div>
+
+    <script>
+        // State management
+        let selection = {
+            version: null,
+            arrangement: null,
+            language: null,
+            color: null,
+            session: null
+        };
+
+        // Version to directory mapping
+        const versionMap = {
+            '2024': '2024 Logos',
+            '2024-AA': '2024 Logos (AA)',
+            '2021': '2021 Logos',
+            'Legacy': 'Legacy'
+        };
+
+        function selectVersion(version) {
+            selection.version = version;
+            updateButtonState(event, 'versionStep');
+            
+            // Show logo selector steps
+            document.getElementById('logoSelector').classList.add('show');
+            
+            // Reset other selections
+            selection.arrangement = null;
+            selection.language = null;
+            selection.color = null;
+            selection.session = null;
+            
+            // Reset button states for other steps
+            resetButtonState('arrangementStep');
+            resetButtonState('languageStep');
+            resetButtonState('colorStep');
+            resetButtonState('sessionStep');
+            
+            // Hide result box
+            document.getElementById('resultBox').classList.remove('show');
+        }
+
+        function selectArrangement(arrangement) {
+            selection.arrangement = arrangement;
+            updateButtonState(event, 'arrangementStep');
+            checkAndDisplayResult();
+        }
+
+        function selectLanguage(language) {
+            selection.language = language;
+            updateButtonState(event, 'languageStep');
+            checkAndDisplayResult();
+        }
+
+        function selectColor(color) {
+            selection.color = color;
+            updateButtonState(event, 'colorStep');
+            checkAndDisplayResult();
+        }
+
+        function selectSession(withSession) {
+            selection.session = withSession;
+            updateButtonState(event, 'sessionStep');
+            checkAndDisplayResult();
+        }
+
+        function updateButtonState(evt, stepId) {
+            const step = document.getElementById(stepId);
+            const buttons = step.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            evt.target.classList.add('active');
+        }
+
+        function resetButtonState(stepId) {
+            const step = document.getElementById(stepId);
+            if (step) {
+                const buttons = step.querySelectorAll('button');
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            }
+        }
+
+        function checkAndDisplayResult() {
+            // Check if all selections are made
+            if (selection.version && selection.arrangement && 
+                selection.language && selection.color && 
+                selection.session !== null) {
+                displayResult();
+            }
+        }
+
+        function displayResult() {
+            const resultBox = document.getElementById('resultBox');
+            const summaryEl = document.getElementById('selectionSummary');
+            const previewEl = document.getElementById('previewImage');
+            const downloadLinksEl = document.getElementById('downloadLinks');
+
+            // Build filename based on selections
+            let filename;
+            if (selection.version === 'Legacy') {
+                // Legacy doesn't follow the same naming pattern
+                summaryEl.innerHTML = `<strong>Version:</strong> Legacy<br>
+                    <em>Note: Legacy logos may have different naming conventions. Please browse the Legacy folder for available options.</em>`;
+                previewEl.style.display = 'none';
+                downloadLinksEl.innerHTML = '<p>Legacy logos are available in various formats. Please check the repository structure.</p>';
+            } else {
+                const sessionSuffix = selection.session ? '-session' : '';
+                filename = `LingSocArtsAssc_${selection.arrangement}-${selection.color}-${selection.language}${sessionSuffix}`;
+                
+                const versionDir = versionMap[selection.version];
+                
+                // Build summary
+                const arrangementText = selection.arrangement === '1' ? 'Primary (Horizontal)' : 'Secondary (Vertical)';
+                const languageText = selection.language === 'en' ? 'English' : 
+                                   selection.language === 'zh' ? 'Chinese' : 'Bilingual';
+                const colorText = selection.color.charAt(0).toUpperCase() + selection.color.slice(1);
+                const sessionText = selection.session ? 'Yes' : 'No';
+                
+                summaryEl.innerHTML = `
+                    <strong>Version:</strong> ${selection.version}<br>
+                    <strong>Arrangement:</strong> ${arrangementText}<br>
+                    <strong>Language:</strong> ${languageText}<br>
+                    <strong>Color Variant:</strong> ${colorText}<br>
+                    <strong>With Session:</strong> ${sessionText}<br>
+                    <strong>Filename:</strong> ${filename}
+                `;
+                
+                // Set preview image (SVG)
+                const svgPath = `${versionDir}/SVG/${filename}.svg`;
+                previewEl.src = svgPath;
+                previewEl.style.display = 'block';
+                previewEl.onerror = function() {
+                    this.style.display = 'none';
+                    summaryEl.innerHTML += '<br><em style="color: #d32f2f;">Preview not available for this combination.</em>';
+                };
+                
+                // Build download links
+                downloadLinksEl.innerHTML = '';
+                
+                // Determine available formats based on version
+                let formats = [];
+                if (selection.version === '2024' || selection.version === '2024-AA') {
+                    formats = ['SVG', 'PNG', 'PDF', 'EPS', 'AI'];
+                } else if (selection.version === '2021') {
+                    formats = ['SVG', 'PNG', 'PDF'];
+                }
+                
+                formats.forEach(format => {
+                    const link = document.createElement('a');
+                    const ext = format.toLowerCase();
+                    const formatDir = format;
+                    link.href = `${versionDir}/${formatDir}/${filename}.${ext}`;
+                    link.textContent = `Download ${format}`;
+                    link.download = '';
+                    downloadLinksEl.appendChild(link);
+                });
+            }
+            
+            resultBox.classList.add('show');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Add info about file formats
+        window.addEventListener('DOMContentLoaded', function() {
+            const logoSelector = document.querySelector('.section');
+            const infoBox = document.createElement('div');
+            infoBox.className = 'info-box';
+            infoBox.innerHTML = `
+                <strong>📝 File Format Guide:</strong><br>
+                <strong>SVG/EPS:</strong> Recommended for professional printing, banners, and scalable graphics<br>
+                <strong>PNG:</strong> For web use, presentations, and quick applications<br>
+                <strong>AI:</strong> For editing in Adobe Illustrator (2024 versions only)<br>
+                <strong>PDF:</strong> For general viewing and some printing applications
+            `;
+            logoSelector.insertBefore(infoBox, logoSelector.children[2]);
+        });
+    </script>
+</body>
+</html>

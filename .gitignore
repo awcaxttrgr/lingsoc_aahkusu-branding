@@ -1,3 +1,4 @@
 rename_errors.log
 .vscode/launch.json
 *.idlk
+/tmp/

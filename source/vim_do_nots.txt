@@ -1,0 +1,66 @@
+LOGOTYPE - WHAT NOT TO DO
+
+[Rules to be displayed statically]
+
+GENERIC RULES
+Do not extend, crop or in any way modify the logotype.  img\vim_rules_do_not_modify_1.png, img\vim_rules_do_not_modify_2.png
+
+Do not compress or expand the logotype. You must always retain the original proportions when resizing the logotype.  img\vim_rules_do_not_distort_1.png, img\vim_rules_do_not_distort_2.png
+
+Do not extrapolate from the logotype. Supplementary text must be placed outside of the clear space around the logotype. img\vim_rules_do_not_extrapolate.png
+
+Do not create new lock-ups.     img\vim_rules_do_not_create_new_lockups.png
+
+Do not recreate the logotype.   img\vim_rules_do_not_recreate.png
+
+Do not use your own typeface to recreate the logotype.  img\vim_rules_do_not_change_typeface.png
+
+Do not replace the Globe with any other visual identity element.   img\vim_rules_do_not_change_logo.png
+
+APPEARANCE (COLOUR AND EFFECTS)
+Do not change the colour, tint or fade of the logotype, except the Monochromatic variant. img\vim_rules_do_not_change_colour.png, img\vim_rules_do_not_change_colour_monochrome.png
+
+Do not outline the logotype. img\vim_rules_do_not_outline.png
+
+Do not apply any effect on the logotype, such as bevel, glow, and drop shadow. img\vim_rules_do_not_add_effects.png
+
+Do not print the Standard logotype in black and white. Use the Greyscale variant.   img\vim_rules_do_not_change_colour_bw.png
+
+DESIGN
+Do not add anything (including text) in the clear space.    img\vim_rules_do_not_invade_clearspace.png
+
+Do not place the logotype too close to the margin. Make sure the clear space stays on the page. img\vim_rules_do_not_invade_clearspace_margin.png
+
+Do not use low-quality versions of the logotype. Graphic designers should always use the vector image of the logotype.  img\vim_rules_do_not_use_low_res.png
+
+[Rules to be displayed by cycling through listed images]
+
+PLACEMENT
+Do not use the Standard lock-up on a dark background, or the Negative variant lock-up on a light background. Ensure enough contrast between the logotype and the background.
+
+[Slide deck 1]
+img\vim_rules_background_donts_A1a.png
+img\vim_rules_background_donts_A1b.png
+img\vim_rules_background_donts_A3a.png
+img\vim_rules_background_donts_A3b.png
+img\vim_rules_background_donts_B1a.png
+img\vim_rules_background_donts_B1b.png
+
+Do not use the logotype on a busy background. Consider adding a background for the logotype.
+
+[Slide deck 2]
+img\vim_rules_background_donts_A4a.png
+img\vim_rules_background_donts_A4b.png
+
+When placing the logo over a background photo or other element, make sure the logotype is clearly visible and doesn’t get overpowered by the background. This may mean choosing a different photo, using the Negative variant or repositioning the logotype so it rests on a less busy area of the photo. Also be aware of not covering up a critical area of the photo.
+
+[Slide deck 3]
+img\vim_rules_background_placement_1.png
+img\vim_rules_background_placement_2.png
+img\vim_rules_background_placement_3.png
+
+Use the negative variant of the logotype when it is set against one of the basic colours. Do not use the primary logotype against any of the basic colours. This would create too less contrast between the logotype and the background.
+
+[Slide deck 4]
+img\vim_rules_background_donts_A2a.png
+img\vim_rules_background_donts_A2b.png

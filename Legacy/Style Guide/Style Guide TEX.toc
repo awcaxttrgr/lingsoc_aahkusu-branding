@@ -1,0 +1,112 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Objectives of the style guide}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}How to use this guide}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Rule of thumb}{2}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Abbreviations, contractions and acronyms}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}General Rule}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Abbreviations}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Contractions}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Acronyms}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Specific abbreviations}{5}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Special use of full stops}{5}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Ampersands}{5}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Degree abbreviation}{5}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}People's initials}{5}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Measurements}{5}{subsection.2.5.5}%
+\contentsline {subsection}{\numberline {2.5.6}Latin abbreviations}{6}{subsection.2.5.6}%
+\contentsline {paragraph}{etc}{6}{section*.1}%
+\contentsline {paragraph}{eg}{6}{section*.2}%
+\contentsline {paragraph}{ie}{6}{section*.3}%
+\contentsline {paragraph}{ibid}{6}{section*.4}%
+\contentsline {subsection}{\numberline {2.5.7}Building codes}{6}{subsection.2.5.7}%
+\contentsline {chapter}{\numberline {3}Definite articles in anaphoric noun phrases}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Capitalisation}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}General rule}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Specific words}{11}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Locations}{11}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Semesters}{11}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}University}{12}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Faculty}{12}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}School}{12}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Department}{12}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Society}{13}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}Government}{13}{subsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.2.9}Names with prefixes}{13}{subsection.4.2.9}%
+\contentsline {subsection}{\numberline {4.2.10}Professor}{13}{subsection.4.2.10}%
+\contentsline {subsection}{\numberline {4.2.11}Reverend}{13}{subsection.4.2.11}%
+\contentsline {subsection}{\numberline {4.2.12}Linguistics}{14}{subsection.4.2.12}%
+\contentsline {subsection}{\numberline {4.2.13}Names of activities organised by the Society}{14}{subsection.4.2.13}%
+\contentsline {subsection}{\numberline {4.2.14}Orientation}{14}{subsection.4.2.14}%
+\contentsline {subsection}{\numberline {4.2.15}Executive Committee}{14}{subsection.4.2.15}%
+\contentsline {subsection}{\numberline {4.2.16}Session}{14}{subsection.4.2.16}%
+\contentsline {subsection}{\numberline {4.2.17}Specifically defined terms}{15}{subsection.4.2.17}%
+\contentsline {section}{\numberline {4.3}Titles}{15}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}People}{15}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Books/films/songs/games etc}{15}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Subtitles}{16}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Headlines, journal articles, chapter titles and lecture titles}{16}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Webpage}{16}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Small caps}{16}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Special notes}{16}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Numbers}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}How to write numbers}{17}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Times}{18}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Dates}{19}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Spans of numbers and years}{19}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Date as part of the name}{20}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Room numbers}{20}{subsection.5.1.5}%
+\contentsline {chapter}{\numberline {6}Punctuations}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}General rule}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Apostrophe}{21}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}To indicate possession}{21}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}To indicate that letters have been omitted (contractions)}{23}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Brackets}{23}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Round brackets ( )}{23}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Using other punctuation with brackets}{24}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Square brackets [ ]}{24}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Angle brackets < > and curly brackets \{ \}}{24}{subsection.6.3.4}%
+\contentsline {section}{\numberline {6.4}Bullet points}{24}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Colon and semicolon}{25}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Comma}{26}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Defining vs non-defining information}{27}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Society Signature}{28}{subsection.6.6.2}%
+\contentsline {section}{\numberline {6.7}Dashes and hyphens --- -- -}{29}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}m-dash (---)}{29}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}n-dash (--)}{29}{subsection.6.7.2}%
+\contentsline {subsection}{\numberline {6.7.3}Hyphen (-)}{30}{subsection.6.7.3}%
+\contentsline {subsubsection}{When to use a hyphen}{30}{section*.5}%
+\contentsline {subsubsection}{When not to use a hyphen}{31}{section*.6}%
+\contentsline {section}{\numberline {6.8}Ellipsis (\textellipsis )}{31}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Full stop, exclamation mark and question mark}{32}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Quotation marks}{33}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Using other punctuation with quotation marks}{33}{subsection.6.10.1}%
+\contentsline {chapter}{\numberline {7}Names and titles}{35}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Aliases}{35}{section.7.1}%
+\contentsline {section}{\numberline {7.2}General titles}{36}{section.7.2}%
+\contentsline {section}{\numberline {7.3}HKU-specific titles}{36}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Other titles}{36}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Postnominals}{37}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Academic qualifications}{38}{subsection.7.4.2}%
+\contentsline {chapter}{\numberline {8}Highlighting/emphasising text}{39}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Bold}{39}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Italic}{39}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Underlining}{40}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Word usage and spelling}{41}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Common confusions in word usage}{41}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Spelling}{43}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}General guidelines}{43}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Foreign spellings}{43}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Plurals}{44}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}Tricky words}{46}{subsection.9.2.4}%
+\contentsline {subsection}{\numberline {9.2.5}Words usually spelt differently in American English}{47}{subsection.9.2.5}%
+\contentsline {chapter}{\numberline {10}Miscellaneous}{49}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Personal pronouns}{49}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Myself, yourself etc}{49}{subsection.10.1.1}%
+\contentsline {section}{\numberline {10.2}Plural or singular?}{50}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Address, phone numbers, website etc}{50}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}URLs}{50}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Referring to webpages}{50}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}Email addresses}{51}{subsection.10.3.3}%
+\contentsline {subsection}{\numberline {10.3.4}Phone numbers}{51}{subsection.10.3.4}%
+\contentsline {subsection}{\numberline {10.3.5}Street addresses}{51}{subsection.10.3.5}%
+\contentsline {section}{\numberline {10.4}Translations and terminology}{52}{section.10.4}%

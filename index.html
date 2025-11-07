@@ -965,7 +965,7 @@
                 <div class="step hidden" id="sessionStep">
                     <h4>Step 5: Include Session Period?</h4>
                     <p>You will need to edit the <strong>session period</strong> manually. You can use vector graphics
-                        editing programs (eg Adobe Illustrator, Inkscape).</p>
+                        editing programs (eg Adobe Illustrator, Inkscape, LibreOffice Draw).</p>
                     <div class="button-group">
                         <button onclick="selectSession(true)">Yes, with Session</button>
                         <button onclick="selectSession(false)">No Session</button>
@@ -980,6 +980,14 @@
                     <div class="result-details">
                         <p id="selectionSummary"></p>
                         <div class="download-links" id="downloadLinks"></div>
+                        <!-- File Format Guide -->
+                        <div class="info-box" style="margin-top: 20px;">
+                            <strong>📝 File Format Guide:</strong><br>
+                            <strong>SVG/EPS:</strong> Recommended for professional printing, banners, and scalable graphics<br>
+                            <strong>PNG:</strong> For web use, presentations, and quick applications<br>
+                            <strong>AI:</strong> For editing in Adobe Illustrator (2024 versions only)<br>
+                            <strong>PDF:</strong> For general viewing and some printing applications
+                        </div>
                     </div>
                     <div class="result-preview-container">
                         <img id="previewImage" class="preview-image" alt="Logo Preview" />
@@ -1861,19 +1869,6 @@
                     downloadLinksEl.appendChild(link);
                 });
             }
-
-            // Add File Format Guide info box after download links
-            const fileFormatGuide = document.createElement('div');
-            fileFormatGuide.className = 'info-box';
-            fileFormatGuide.style.marginTop = '20px';
-            fileFormatGuide.innerHTML = `
-                <strong>📝 File Format Guide:</strong><br>
-                <strong>SVG/EPS:</strong> Recommended for professional printing, banners, and scalable graphics<br>
-                <strong>PNG:</strong> For web use, presentations, and quick applications<br>
-                <strong>AI:</strong> For editing in Adobe Illustrator (2024 versions only)<br>
-                <strong>PDF:</strong> For general viewing and some printing applications
-            `;
-            resultBox.appendChild(fileFormatGuide);
 
             resultBox.classList.add('show');
             resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

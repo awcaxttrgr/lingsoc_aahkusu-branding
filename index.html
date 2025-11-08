@@ -252,7 +252,13 @@
             height: auto;
             border: 1px solid var(--border-color);
             border-radius: 4px;
-            background: white;
+            background: 
+                linear-gradient(45deg, #ccc 25%, transparent 25%),
+                linear-gradient(-45deg, #ccc 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #ccc 75%),
+                linear-gradient(-45deg, transparent 75%, #ccc 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
             padding: 20px;
             object-fit: contain;
         }
@@ -846,13 +852,13 @@
                     </div>
                 </div>
 
-                <!-- Color Variant Selection -->
+                <!-- Colour Variant Selection -->
                 <div class="step hidden" id="colorStep">
-                    <h4>Step 4: Select Color Variant</h4>
+                    <h4>Step 4: Select Colour Variant</h4>
                     <div class="button-group" id="colorButtons">
                         <div class="button-with-preview">
                             <div class="button-preview" id="preview-color-standard"></div>
-                            <button onclick="selectColor('standard')">Standard (Full Color)</button>
+                            <button onclick="selectColor('standard')">Standard (Full Colour)</button>
                         </div>
                         <div class="button-with-preview">
                             <div class="button-preview" id="preview-color-negative" style="background: #333;"></div>
@@ -863,14 +869,18 @@
                             <button onclick="selectColor('greyscale')">Greyscale (B&W Print)</button>
                         </div>
                         <div class="button-with-preview">
+                            <div class="button-preview" id="preview-color-greyscale-negative" style="background: #333;"></div>
+                            <button onclick="selectColor('greyscale-negative')">Greyscale Negative</button>
+                        </div>
+                        <div class="button-with-preview">
                             <div class="button-preview" id="preview-color-monochrome"></div>
                             <button onclick="selectColor('monochrome')">Monochromatic</button>
                         </div>
                     </div>
 
-                    <!-- Color & Placement Rules -->
+                    <!-- Colour & Placement Rules -->
                     <div class="rules-section">
-                        <h5>Color & Placement Guidelines</h5>
+                        <h5>Colour & Placement Guidelines</h5>
                         <p>Refer to Visual Identity Manual for details.</p>
                         <div class="rule-images">
                             <div class="rule-image">
@@ -985,7 +995,7 @@
                             <strong>📝 File Format Guide:</strong><br>
                             <strong>SVG/EPS:</strong> Recommended for professional printing, banners, and scalable graphics<br>
                             <strong>PNG:</strong> For web use, presentations, and quick applications<br>
-                            <strong>AI:</strong> For editing in Adobe Illustrator (2024 versions only)<br>
+                            <strong>AI:</strong> For editing in Adobe Illustrator<br>
                             <strong>PDF:</strong> For general viewing and some printing applications
                         </div>
                     </div>
@@ -996,7 +1006,7 @@
 
                 <!-- General Usage Rules -->
                 <div class="rules-section">
-                    <h5>Logotype Usage Rules - What NOT to Do</h5>
+                    <h5>Logotype Usage Rules</h5>
                     <p>Refer to Visual Identity Manual for details.</p>
                     <div class="rule-images">
                         <div class="rule-image">
@@ -1271,7 +1281,7 @@
                     <div class="download-grid">
                         <div class="download-card">
                             <h4>AA Letterhead (Portrait BW)</h4>
-                            <p>Portrait orientation, black & white, no color, no font embedding</p>
+                            <p>Portrait orientation, black & white, no colour, no font embedding</p>
                             <a href="Legacy/lingsoc-letterhead/Linguistics Society, AA Letterhead (Portrait BW NoColour NoFont).dotx"
                                 class="btn" download><span class="material-symbols-outlined">download</span>DOTX</a>
                         </div>
@@ -1296,14 +1306,14 @@
                             <div class="download-grid">
                                 <div class="download-card deprecated-card">
                                     <h4>AAHKUSU Letterhead (Portrait BW)</h4>
-                                    <p>Portrait orientation, black & white, no color, no font embedding</p>
+                                    <p>Portrait orientation, black & white, no colour, no font embedding</p>
                                     <a href="Legacy/lingsoc-letterhead/Linguistics Society, AAHKUSU Letterhead (Portrait BW NoColour NoFont).dotx"
                                         class="btn" download><span
                                             class="material-symbols-outlined">download</span>DOTX</a>
                                 </div>
                                 <div class="download-card deprecated-card">
-                                    <h4>AAHKUSU Letterhead (Portrait Color)</h4>
-                                    <p>Portrait orientation, color version, no font embedding</p>
+                                    <h4>AAHKUSU Letterhead (Portrait Colour)</h4>
+                                    <p>Portrait orientation, colour version, no font embedding</p>
                                     <a href="Legacy/lingsoc-letterhead/Linguistics Society, AAHKUSU Letterhead (Portrait Colour NoFont).dotx"
                                         class="btn" download><span
                                             class="material-symbols-outlined">download</span>DOTX</a>
@@ -1316,8 +1326,8 @@
                                             class="material-symbols-outlined">download</span>DOTX</a>
                                 </div>
                                 <div class="download-card deprecated-card">
-                                    <h4>AAHKUSU Letterhead (Landscape Color)</h4>
-                                    <p>Landscape orientation, color version, no font embedding</p>
+                                    <h4>AAHKUSU Letterhead (Landscape Colour)</h4>
+                                    <p>Landscape orientation, colour version, no font embedding</p>
                                     <a href="Legacy/lingsoc-letterhead/Linguistics Society, AAHKUSU Letterhead (Landscape Colour NoFont).dotx"
                                         class="btn" download><span
                                             class="material-symbols-outlined">download</span>DOTX</a>
@@ -1590,13 +1600,22 @@
 
                 // Update color previews if arrangement and language are selected
                 if (selection.arrangement && selection.language) {
-                    ['standard', 'negative', 'greyscale', 'monochrome'].forEach(color => {
+                    ['standard', 'negative', 'greyscale', 'greyscale-negative', 'monochrome'].forEach(color => {
                         const preview = document.getElementById(`preview-color-${color}`);
                         if (preview) {
-                            // For negative color option, show standard color with negative flag
+                            // For negative and greyscale-negative options, show standard/greyscale color with negative flag
                             // For other colors, show that color without negative flag
-                            const isNegative = (color === 'negative');
-                            const actualColor = isNegative ? 'standard' : color;
+                            let isNegative = false;
+                            let actualColor = color;
+                            
+                            if (color === 'negative') {
+                                isNegative = true;
+                                actualColor = 'standard';
+                            } else if (color === 'greyscale-negative') {
+                                isNegative = true;
+                                actualColor = 'greyscale';
+                            }
+                            
                             const filename = buildLegacyFilename(actualColor, selection.arrangement, isNegative, selection.language, false);
                             const samplePath = `${versionDir}/SVG/${filename}.svg`;
                             preview.innerHTML = `<img src="${samplePath}" alt="${color}">`;
@@ -1619,7 +1638,7 @@
 
                 // Update color previews if arrangement and language are selected
                 if (selection.arrangement && selection.language) {
-                    ['standard', 'negative', 'greyscale', 'monochrome'].forEach(color => {
+                    ['standard', 'negative', 'greyscale', 'greyscale-negative', 'monochrome'].forEach(color => {
                         const preview = document.getElementById(`preview-color-${color}`);
                         if (preview) {
                             const samplePath = `${versionDir}/SVG/${prefix}${selection.arrangement}-${color}-${selection.language}.svg`;
@@ -1736,9 +1755,17 @@
                 // Legacy uses different naming: [color]-arrangement[-negative]-language[-session]
                 const versionDir = versionMap[selection.version];
 
-                // For negative color option, use standard color with negative flag
-                const isNegative = (selection.color === 'negative');
-                const actualColor = isNegative ? 'standard' : selection.color;
+                // For negative and greyscale-negative color options, use standard/greyscale color with negative flag
+                let isNegative = false;
+                let actualColor = selection.color;
+                
+                if (selection.color === 'negative') {
+                    isNegative = true;
+                    actualColor = 'standard';
+                } else if (selection.color === 'greyscale-negative') {
+                    isNegative = true;
+                    actualColor = 'greyscale';
+                }
 
                 filename = buildLegacyFilename(actualColor, selection.arrangement, isNegative, selection.language, selection.session);
 
@@ -1753,7 +1780,7 @@
                     <strong>Version:</strong> Legacy<br>
                     <strong>Arrangement:</strong> ${arrangementText}<br>
                     <strong>Language:</strong> ${languageText}<br>
-                    <strong>Color Variant:</strong> ${colorText}<br>
+                    <strong>Colour Variant:</strong> ${colorText}<br>
                     <strong>With Session:</strong> ${sessionText}<br>
                     <strong>Filename:</strong> ${filename}
                 `;
@@ -1762,6 +1789,20 @@
                 const svgPath = `${versionDir}/SVG/${filename}.svg`;
                 previewEl.src = svgPath;
                 previewEl.style.display = 'block';
+                
+                // Set background based on color variant
+                if (selection.color === 'negative' || selection.color === 'greyscale-negative') {
+                    previewEl.style.background = '#333';
+                } else {
+                    previewEl.style.background = 
+                        'linear-gradient(45deg, #ccc 25%, transparent 25%), ' +
+                        'linear-gradient(-45deg, #ccc 25%, transparent 25%), ' +
+                        'linear-gradient(45deg, transparent 75%, #ccc 75%), ' +
+                        'linear-gradient(-45deg, transparent 75%, #ccc 75%)';
+                    previewEl.style.backgroundSize = '20px 20px';
+                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
+                }
+                
                 previewEl.onerror = function () {
                     this.style.display = 'none';
                     summaryEl.innerHTML += '<br><em style="color: #d32f2f;">Preview not available for this combination.</em>';
@@ -1799,7 +1840,7 @@
                     <strong>Version:</strong> ${selection.version}<br>
                     <strong>Arrangement:</strong> ${arrangementText}<br>
                     <strong>Language:</strong> ${languageText}<br>
-                    <strong>Color Variant:</strong> ${colorText}<br>
+                    <strong>Colour Variant:</strong> ${colorText}<br>
                     <strong>With Session:</strong> ${sessionText}<br>
                     <strong>Filename:</strong> ${filename}
                 `;
@@ -1808,6 +1849,20 @@
                 const svgPath = `${versionDir}/SVG/${filename}.svg`;
                 previewEl.src = svgPath;
                 previewEl.style.display = 'block';
+                
+                // Set background based on color variant
+                if (selection.color === 'negative' || selection.color === 'greyscale-negative') {
+                    previewEl.style.background = '#333';
+                } else {
+                    previewEl.style.background = 
+                        'linear-gradient(45deg, #ccc 25%, transparent 25%), ' +
+                        'linear-gradient(-45deg, #ccc 25%, transparent 25%), ' +
+                        'linear-gradient(45deg, transparent 75%, #ccc 75%), ' +
+                        'linear-gradient(-45deg, transparent 75%, #ccc 75%)';
+                    previewEl.style.backgroundSize = '20px 20px';
+                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
+                }
+                
                 previewEl.onerror = function () {
                     this.style.display = 'none';
                     summaryEl.innerHTML += '<br><em style="color: #d32f2f;">Preview not available for this combination.</em>';
@@ -1827,11 +1882,12 @@
                 } else if (selection.version === '2021') {
                     formats = ['SVG', 'PDF', 'EPS', 'AI'];
                     // PNG files with session are not available (cannot be edited)
-                    // Also PNG bilingual files not available for greyscale/negative/monochrome
+                    // Also PNG bilingual files not available for greyscale/negative/greyscale-negative/monochrome
                     if (!selection.session) {
                         const pngAvailable = !(selection.language === 'bi' &&
                             (selection.color === 'greyscale' ||
                                 selection.color === 'negative' ||
+                                selection.color === 'greyscale-negative' ||
                                 selection.color === 'monochrome'));
                         if (pngAvailable) {
                             formats.splice(1, 0, 'PNG'); // Insert PNG after SVG
@@ -1850,11 +1906,12 @@
                 } else if (selection.version === '2021' && selection.language === 'bi' &&
                     (selection.color === 'greyscale' ||
                         selection.color === 'negative' ||
+                        selection.color === 'greyscale-negative' ||
                         selection.color === 'monochrome')) {
                     const warningBox = document.createElement('div');
                     warningBox.className = 'warning-box';
                     const warningText = document.createElement('p');
-                    warningText.innerHTML = '<strong>PNG files not available:</strong> PNG files for bilingual 2021 logos in greyscale, negative, or monochrome variants are not available. Please use SVG, PDF, EPS, or AI formats instead.';
+                    warningText.innerHTML = '<strong>PNG files not available:</strong> PNG files for bilingual 2021 logos in greyscale, negative, greyscale negative, or monochrome variants are not available. Please use SVG, PDF, EPS, or AI formats instead.';
                     warningBox.appendChild(warningText);
                     downloadLinksEl.appendChild(warningBox);
                 }

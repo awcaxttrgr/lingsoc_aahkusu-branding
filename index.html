@@ -1792,7 +1792,15 @@
                 
                 // Set background based on color variant
                 if (selection.color === 'negative' || selection.color === 'greyscale-negative') {
-                    previewEl.style.background = '#333';
+                    // Dark checkerboard pattern for negative variants
+                    previewEl.style.background = 
+                        'linear-gradient(45deg, #2a2a2a 25%, transparent 25%), ' +
+                        'linear-gradient(-45deg, #2a2a2a 25%, transparent 25%), ' +
+                        'linear-gradient(45deg, transparent 75%, #2a2a2a 75%), ' +
+                        'linear-gradient(-45deg, transparent 75%, #2a2a2a 75%), ' +
+                        '#1a1a1a';
+                    previewEl.style.backgroundSize = '20px 20px';
+                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
                 } else {
                     previewEl.style.background = 
                         'linear-gradient(45deg, #ccc 25%, transparent 25%), ' +
@@ -1852,7 +1860,15 @@
                 
                 // Set background based on color variant
                 if (selection.color === 'negative' || selection.color === 'greyscale-negative') {
-                    previewEl.style.background = '#333';
+                    // Dark checkerboard pattern for negative variants
+                    previewEl.style.background = 
+                        'linear-gradient(45deg, #2a2a2a 25%, transparent 25%), ' +
+                        'linear-gradient(-45deg, #2a2a2a 25%, transparent 25%), ' +
+                        'linear-gradient(45deg, transparent 75%, #2a2a2a 75%), ' +
+                        'linear-gradient(-45deg, transparent 75%, #2a2a2a 75%), ' +
+                        '#1a1a1a';
+                    previewEl.style.backgroundSize = '20px 20px';
+                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
                 } else {
                     previewEl.style.background = 
                         'linear-gradient(45deg, #ccc 25%, transparent 25%), ' +

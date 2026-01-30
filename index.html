@@ -551,6 +551,242 @@
             color: #ffc107;
         }
 
+        /* Session Editor Styles */
+        .session-editor-section {
+            background-color: #e8f5e9;
+            border: 2px solid var(--island-green);
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .session-editor-section.show {
+            display: block;
+        }
+
+        .session-editor-section h4 {
+            color: var(--island-green);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .session-editor-section h4::before {
+            content: 'edit_calendar';
+            font-family: 'Material Symbols Outlined';
+            font-size: 1.5em;
+        }
+
+        .session-year-inputs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .session-year-inputs label {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .session-year-inputs input[type="number"] {
+            width: 100px;
+            padding: 10px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .session-year-inputs input[type="number"]:focus {
+            border-color: var(--island-green);
+            outline: none;
+        }
+
+        .session-year-inputs .year-separator {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .session-download-btn {
+            background-color: var(--island-green);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .session-download-btn:hover {
+            background-color: var(--england-red);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .session-download-btn:disabled {
+            background-color: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .session-info-box {
+            background-color: #c8e6c9;
+            border: 1px solid var(--island-green);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .session-info-box p {
+            margin: 0;
+            color: #2e7d32;
+            font-size: 0.95em;
+        }
+
+        .session-info-box strong {
+            color: #1b5e20;
+        }
+
+        /* Color Picker Styles */
+        .color-picker-section {
+            background-color: #fff8e1;
+            border: 2px solid #ffc107;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .color-picker-section.show {
+            display: block;
+        }
+
+        .color-picker-section h4 {
+            color: #f57f17;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-picker-section h4::before {
+            content: 'palette';
+            font-family: 'Material Symbols Outlined';
+            font-size: 1.5em;
+        }
+
+        .color-picker-inputs {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .color-picker-inputs label {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .color-picker-inputs input[type="color"] {
+            width: 60px;
+            height: 40px;
+            padding: 0;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            background: none;
+        }
+
+        .color-picker-inputs input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 2px;
+        }
+
+        .color-picker-inputs input[type="color"]::-webkit-color-swatch {
+            border-radius: 4px;
+            border: none;
+        }
+
+        .color-picker-inputs input[type="text"] {
+            width: 100px;
+            padding: 10px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-family: monospace;
+            text-transform: uppercase;
+        }
+
+        .color-picker-inputs input[type="text"]:focus {
+            border-color: #ffc107;
+            outline: none;
+        }
+
+        .color-reset-btn {
+            background-color: #fff;
+            color: #f57f17;
+            border: 2px solid #ffc107;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .color-reset-btn:hover {
+            background-color: #fff8e1;
+        }
+
+        .color-download-btn {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .color-download-btn:hover {
+            background-color: #ffb300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-info-box {
+            background-color: #ffecb3;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .color-info-box p {
+            margin: 0;
+            color: #f57f17;
+            font-size: 0.95em;
+        }
+
+        .color-info-box strong {
+            color: #e65100;
+        }
+
         .rules-list {
             list-style: none;
             padding: 0;
@@ -974,8 +1210,9 @@
                 <!-- Session Selection -->
                 <div class="step hidden" id="sessionStep">
                     <h4>Step 5: Include Session Period?</h4>
-                    <p>You will need to edit the <strong>session period</strong> manually. You can use vector graphics
+                    <p>The <strong>session period</strong> can be edited manually. You can use vector graphics
                         editing programs (eg Adobe Illustrator, Inkscape, LibreOffice Draw).</p>
+                        <p>You can also edit the session period here before downloading the SVG file.</p>
                     <div class="button-group">
                         <button onclick="selectSession(true)">Yes, with Session</button>
                         <button onclick="selectSession(false)">No Session</button>
@@ -1000,7 +1237,61 @@
                         </div>
                     </div>
                     <div class="result-preview-container">
-                        <img id="previewImage" class="preview-image" alt="Logo Preview" />
+                        <div class="preview-image-wrapper">
+                            <img id="previewImage" class="preview-image" alt="Logo Preview" />
+                        </div>
+                        
+                        <!-- Session Editor Section -->
+                        <div class="session-editor-section" id="sessionEditorSection">
+                            <h4>Customise Session Period</h4>
+                            <p>Enter the session years below to generate a customised SVG file with the session period pre-filled:</p>
+                            
+                            <div class="session-year-inputs">
+                                <label for="sessionYear1">Session</label>
+                                <input type="number" id="sessionYear1" min="2000" max="2099" placeholder="20XX" />
+                                <span class="year-separator">–</span>
+                                <input type="number" id="sessionYear2" min="2000" max="2099" placeholder="20XX" />
+                            </div>
+                            
+                            <button class="session-download-btn" id="downloadSessionSvgBtn" onclick="downloadCustomSessionSvg()" disabled>
+                                <span class="material-symbols-outlined">download</span>
+                                Download Customised SVG
+                            </button>
+                            
+                            <div class="session-info-box">
+                                <p><strong>💡 Tip:</strong> The SVG format is widely supported and can be opened in:</p>
+                                <p style="margin-top: 8px;">• <strong>Vector editing software:</strong> Adobe Illustrator, Inkscape, Affinity Designer, CorelDRAW</p>
+                                <p>• <strong>Online design tools:</strong> Canva, Figma, Adobe Express</p>
+                                <p>• <strong>Microsoft 365:</strong> Word, PowerPoint, and other Office applications (Insert → Pictures → This Device)</p>
+                                <p style="margin-top: 8px; font-style: italic;">Using this feature saves you from manually editing the session text in the file.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Color Picker Section for Monochrome -->
+                        <div class="color-picker-section" id="colorPickerSection">
+                            <h4>Customise Monochrome Colour</h4>
+                            <p>Choose a custom colour for the monochrome logotype. The preview will update in real-time:</p>
+                            
+                            <div class="color-picker-inputs">
+                                <label for="monochromeColorPicker">Colour:</label>
+                                <input type="color" id="monochromeColorPicker" value="#A49B4B" />
+                                <input type="text" id="monochromeColorHex" value="#A49B4B" placeholder="#A49B4B" />
+                                <button class="color-reset-btn" onclick="resetMonochromeColor()">
+                                    Reset to Default
+                                </button>
+                            </div>
+                            
+                            <button class="color-download-btn" id="downloadColorSvgBtn" onclick="downloadCustomColorSvg()">
+                                <span class="material-symbols-outlined">download</span>
+                                Download Customised SVG
+                            </button>
+                            
+                            <div class="color-info-box">
+                                <p><strong>💡 Tip:</strong> The default monochrome colour is <strong>#A49B4B</strong> (olive gold). You can customise it to match your project's colour scheme.</p>
+                                <p style="margin-top: 8px;">• The SVG format preserves colour information and can be further edited in vector software</p>
+                                <p>• For session variants, you can customise both the colour and session period</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1707,12 +1998,17 @@
             document.getElementById('resultBox').classList.remove('show');
 
             updatePreviews();
+            updateColorPickerVisibility();
         }
 
         function selectSession(withSession) {
             selection.session = withSession;
             updateButtonState(event, 'sessionStep');
             checkAndDisplayResult();
+            updateSessionEditorVisibility();
+            updateColorPickerVisibility();
+            // Trigger preview update after a short delay to allow displayResult to complete
+            setTimeout(() => updatePreviewWithCustomizations(), 100);
         }
 
         function updateButtonState(evt, stepId) {
@@ -2023,6 +2319,413 @@
 
         // Stop all slideshows when user leaves the page
         window.addEventListener('beforeunload', stopAllSlideshows);
+
+        // Session Editor functionality
+        const sessionYear1Input = document.getElementById('sessionYear1');
+        const sessionYear2Input = document.getElementById('sessionYear2');
+        const downloadSessionBtn = document.getElementById('downloadSessionSvgBtn');
+        
+        // Color Picker functionality
+        const monochromeColorPicker = document.getElementById('monochromeColorPicker');
+        const monochromeColorHex = document.getElementById('monochromeColorHex');
+        const downloadColorBtn = document.getElementById('downloadColorSvgBtn');
+        const DEFAULT_MONOCHROME_COLOR = '#A49B4B';
+
+        // Set default years based on current date
+        function setDefaultSessionYears() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = now.getMonth(); // 0-indexed (0 = January)
+            
+            // Academic year typically starts in September
+            // If we're in September or later, use current year - next year
+            // Otherwise, use previous year - current year
+            if (currentMonth >= 8) { // September onwards
+                sessionYear1Input.value = currentYear;
+                sessionYear2Input.value = currentYear + 1;
+            } else {
+                sessionYear1Input.value = currentYear - 1;
+                sessionYear2Input.value = currentYear;
+            }
+            validateSessionYears();
+        }
+
+        // Validate session year inputs
+        function validateSessionYears() {
+            const year1 = parseInt(sessionYear1Input.value);
+            const year2 = parseInt(sessionYear2Input.value);
+            
+            const isValid = !isNaN(year1) && !isNaN(year2) && 
+                           year1 >= 2000 && year1 <= 2099 &&
+                           year2 >= 2000 && year2 <= 2099 &&
+                           year2 > year1;
+            
+            downloadSessionBtn.disabled = !isValid;
+            return isValid;
+        }
+
+        // Add event listeners for year inputs
+        sessionYear1Input.addEventListener('input', function() {
+            validateSessionYears();
+            updatePreviewWithCustomizations();
+        });
+        sessionYear2Input.addEventListener('input', function() {
+            validateSessionYears();
+            updatePreviewWithCustomizations();
+        });
+        
+        // Add event listeners for color picker
+        monochromeColorPicker.addEventListener('input', function() {
+            monochromeColorHex.value = monochromeColorPicker.value.toUpperCase();
+            updatePreviewWithCustomizations();
+        });
+        
+        monochromeColorHex.addEventListener('input', function() {
+            let hexValue = monochromeColorHex.value.trim();
+            // Add # if not present
+            if (hexValue && !hexValue.startsWith('#')) {
+                hexValue = '#' + hexValue;
+            }
+            // Validate hex color
+            if (/^#[0-9A-Fa-f]{6}$/.test(hexValue)) {
+                monochromeColorPicker.value = hexValue;
+                updatePreviewWithCustomizations();
+            }
+        });
+        
+        // Reset monochrome color to default
+        function resetMonochromeColor() {
+            monochromeColorPicker.value = DEFAULT_MONOCHROME_COLOR;
+            monochromeColorHex.value = DEFAULT_MONOCHROME_COLOR;
+            updatePreviewWithCustomizations();
+        }
+
+        // Show/hide session editor based on selection
+        function updateSessionEditorVisibility() {
+            const sessionEditorSection = document.getElementById('sessionEditorSection');
+            
+            if (selection.session === true) {
+                sessionEditorSection.classList.add('show');
+                setDefaultSessionYears();
+            } else {
+                sessionEditorSection.classList.remove('show');
+            }
+        }
+        
+        // Show/hide color picker based on selection
+        function updateColorPickerVisibility() {
+            const colorPickerSection = document.getElementById('colorPickerSection');
+            
+            if (selection.color === 'monochrome') {
+                colorPickerSection.classList.add('show');
+                // Reset to default color when showing
+                monochromeColorPicker.value = DEFAULT_MONOCHROME_COLOR;
+                monochromeColorHex.value = DEFAULT_MONOCHROME_COLOR;
+            } else {
+                colorPickerSection.classList.remove('show');
+            }
+        }
+        
+        // Update preview with customizations (session years and/or color)
+        async function updatePreviewWithCustomizations() {
+            const previewEl = document.getElementById('previewImage');
+            
+            // Only proceed if we have a valid selection
+            if (!selection.version || !selection.arrangement || !selection.language || !selection.color || selection.session === null) {
+                return;
+            }
+            
+            // Build the SVG file path
+            let svgPath;
+            if (selection.version === 'Legacy') {
+                const versionDir = versionMap[selection.version];
+                let isNegative = false;
+                let actualColor = selection.color;
+                
+                if (selection.color === 'negative') {
+                    isNegative = true;
+                    actualColor = 'standard';
+                } else if (selection.color === 'greyscale-negative') {
+                    isNegative = true;
+                    actualColor = 'greyscale';
+                }
+                
+                const filename = buildLegacyFilename(actualColor, selection.arrangement, isNegative, selection.language, selection.session);
+                svgPath = `${versionDir}/SVG/${filename}.svg`;
+            } else {
+                const versionDir = versionMap[selection.version];
+                const prefix = getLogoPrefix(selection.version);
+                const sessionSuffix = selection.session ? '-session' : '';
+                const filename = `${prefix}${selection.arrangement}-${selection.color}-${selection.language}${sessionSuffix}`;
+                svgPath = `${versionDir}/SVG/${filename}.svg`;
+            }
+            
+            try {
+                // Fetch the original SVG
+                const response = await fetch(svgPath);
+                if (!response.ok) {
+                    return;
+                }
+                
+                let svgContent = await response.text();
+                let modified = false;
+                
+                // Apply session year customization if applicable
+                if (selection.session === true) {
+                    const year1 = sessionYear1Input.value;
+                    const year2 = sessionYear2Input.value;
+                    
+                    if (year1 && year2 && parseInt(year2) > parseInt(year1)) {
+                        const newSessionText = `Session ${year1}–${year2}`;
+                        
+                        // Replace session text patterns
+                        svgContent = svgContent.replace(
+                            />Session 20  –20  </g,
+                            `>${newSessionText}<`
+                        );
+                        svgContent = svgContent.replace(
+                            />Session\s+20\d{0,2}\s*[–\-]\s*20\d{0,2}\s*</g,
+                            `>${newSessionText}<`
+                        );
+                        svgContent = svgContent.replace(
+                            />Session\s+\d{4}[–\-]\d{4}</g,
+                            `>${newSessionText}<`
+                        );
+                        modified = true;
+                    }
+                }
+                
+                // Apply color customization if monochrome
+                if (selection.color === 'monochrome') {
+                    const customColor = monochromeColorPicker.value;
+                    if (customColor && customColor.toUpperCase() !== DEFAULT_MONOCHROME_COLOR) {
+                        // Replace the monochrome color (various case formats found in files)
+                        svgContent = svgContent.replace(/#a49b4b/gi, customColor);
+                        svgContent = svgContent.replace(/#a39b4b/gi, customColor); // Also handle slight variation
+                        svgContent = svgContent.replace(/#A49B4B/gi, customColor);
+                        svgContent = svgContent.replace(/#A39B4B/gi, customColor);
+                        modified = true;
+                    }
+                }
+                
+                if (modified) {
+                    // Create a blob URL for the modified SVG
+                    const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+                    const url = URL.createObjectURL(blob);
+                    
+                    // Revoke the old blob URL if it exists
+                    if (previewEl.dataset.blobUrl) {
+                        URL.revokeObjectURL(previewEl.dataset.blobUrl);
+                    }
+                    
+                    previewEl.dataset.blobUrl = url;
+                    previewEl.src = url;
+                } else {
+                    // Use original SVG path
+                    if (previewEl.dataset.blobUrl) {
+                        URL.revokeObjectURL(previewEl.dataset.blobUrl);
+                        delete previewEl.dataset.blobUrl;
+                    }
+                    previewEl.src = svgPath;
+                }
+                
+            } catch (error) {
+                console.error('Error updating preview:', error);
+            }
+        }
+
+        // Download customised session SVG
+        async function downloadCustomSessionSvg() {
+            if (!validateSessionYears()) {
+                alert('Please enter valid session years.');
+                return;
+            }
+            
+            const year1 = sessionYear1Input.value;
+            const year2 = sessionYear2Input.value;
+            
+            // Build the SVG file path
+            let svgPath;
+            let baseFilename;
+            
+            if (selection.version === 'Legacy') {
+                const versionDir = versionMap[selection.version];
+                let isNegative = false;
+                let actualColor = selection.color;
+                
+                if (selection.color === 'negative') {
+                    isNegative = true;
+                    actualColor = 'standard';
+                } else if (selection.color === 'greyscale-negative') {
+                    isNegative = true;
+                    actualColor = 'greyscale';
+                }
+                
+                baseFilename = buildLegacyFilename(actualColor, selection.arrangement, isNegative, selection.language, true);
+                svgPath = `${versionDir}/SVG/${baseFilename}.svg`;
+            } else {
+                const versionDir = versionMap[selection.version];
+                const prefix = getLogoPrefix(selection.version);
+                baseFilename = `${prefix}${selection.arrangement}-${selection.color}-${selection.language}-session`;
+                svgPath = `${versionDir}/SVG/${baseFilename}.svg`;
+            }
+            
+            try {
+                // Fetch the SVG file
+                const response = await fetch(svgPath);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch SVG file');
+                }
+                
+                let svgContent = await response.text();
+                
+                // Create the new session text
+                // The original format in the SVG is "Session 20  –20  " (with spaces for digits)
+                // We need to replace it with the actual years
+                const newSessionText = `Session ${year1}–${year2}`;
+                
+                // Replace the tspan content - handle various patterns
+                // Pattern 1: Full placeholder text
+                svgContent = svgContent.replace(
+                    />Session 20  –20  </g,
+                    `>${newSessionText}<`
+                );
+                
+                // Pattern 2: Different spacing variations
+                svgContent = svgContent.replace(
+                    />Session\s+20\d{0,2}\s*[–\-]\s*20\d{0,2}\s*</g,
+                    `>${newSessionText}<`
+                );
+                
+                // Pattern 3: Legacy format with different date format (e.g., "Session 2017–2018")
+                svgContent = svgContent.replace(
+                    />Session\s+\d{4}[–\-]\d{4}</g,
+                    `>${newSessionText}<`
+                );
+                
+                // Create a new filename with the session years
+                const newFilename = `${baseFilename.replace('-session', '')}_Session-${year1}-${year2}.svg`;
+                
+                // Create a blob and download link
+                const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(blob);
+                
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = newFilename;
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // Clean up the object URL
+                URL.revokeObjectURL(url);
+                
+            } catch (error) {
+                console.error('Error downloading customised SVG:', error);
+                alert('Error generating customised SVG. Please try downloading the standard SVG and edit it manually.');
+            }
+        }
+        
+        // Download customised color SVG (for monochrome logotypes)
+        async function downloadCustomColorSvg() {
+            const customColor = monochromeColorPicker.value;
+            
+            // Build the SVG file path
+            let svgPath;
+            let baseFilename;
+            
+            if (selection.version === 'Legacy') {
+                const versionDir = versionMap[selection.version];
+                let isNegative = false;
+                let actualColor = selection.color;
+                
+                if (selection.color === 'negative') {
+                    isNegative = true;
+                    actualColor = 'standard';
+                } else if (selection.color === 'greyscale-negative') {
+                    isNegative = true;
+                    actualColor = 'greyscale';
+                }
+                
+                baseFilename = buildLegacyFilename(actualColor, selection.arrangement, isNegative, selection.language, selection.session);
+                svgPath = `${versionDir}/SVG/${baseFilename}.svg`;
+            } else {
+                const versionDir = versionMap[selection.version];
+                const prefix = getLogoPrefix(selection.version);
+                const sessionSuffix = selection.session ? '-session' : '';
+                baseFilename = `${prefix}${selection.arrangement}-${selection.color}-${selection.language}${sessionSuffix}`;
+                svgPath = `${versionDir}/SVG/${baseFilename}.svg`;
+            }
+            
+            try {
+                // Fetch the SVG file
+                const response = await fetch(svgPath);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch SVG file');
+                }
+                
+                let svgContent = await response.text();
+                
+                // Apply session year customization if applicable
+                if (selection.session === true) {
+                    const year1 = sessionYear1Input.value;
+                    const year2 = sessionYear2Input.value;
+                    
+                    if (year1 && year2 && parseInt(year2) > parseInt(year1)) {
+                        const newSessionText = `Session ${year1}–${year2}`;
+                        
+                        // Replace session text patterns
+                        svgContent = svgContent.replace(
+                            />Session 20  –20  </g,
+                            `>${newSessionText}<`
+                        );
+                        svgContent = svgContent.replace(
+                            />Session\s+20\d{0,2}\s*[–\-]\s*20\d{0,2}\s*</g,
+                            `>${newSessionText}<`
+                        );
+                        svgContent = svgContent.replace(
+                            />Session\s+\d{4}[–\-]\d{4}</g,
+                            `>${newSessionText}<`
+                        );
+                    }
+                }
+                
+                // Replace the monochrome color (various case formats found in files)
+                svgContent = svgContent.replace(/#a49b4b/gi, customColor);
+                svgContent = svgContent.replace(/#a39b4b/gi, customColor); // Handle slight variation found in files
+                svgContent = svgContent.replace(/#A49B4B/gi, customColor);
+                svgContent = svgContent.replace(/#A39B4B/gi, customColor);
+                
+                // Create a new filename with the custom color
+                const colorHex = customColor.replace('#', '').toUpperCase();
+                let newFilename;
+                if (selection.session === true) {
+                    const year1 = sessionYear1Input.value;
+                    const year2 = sessionYear2Input.value;
+                    newFilename = `${baseFilename.replace('-session', '')}_Session-${year1}-${year2}_Colour-${colorHex}.svg`;
+                } else {
+                    newFilename = `${baseFilename}_Colour-${colorHex}.svg`;
+                }
+                
+                // Create a blob and download link
+                const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(blob);
+                
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = newFilename;
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // Clean up the object URL
+                URL.revokeObjectURL(url);
+                
+            } catch (error) {
+                console.error('Error downloading customised SVG:', error);
+                alert('Error generating customised SVG. Please try downloading the standard SVG and edit it manually.');
+            }
+        }
     </script>
 </body>
 

@@ -253,14 +253,15 @@
             border: 1px solid var(--border-color);
             border-radius: 4px;
             background: 
-                linear-gradient(45deg, #ccc 25%, transparent 25%),
-                linear-gradient(-45deg, #ccc 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, #ccc 75%),
-                linear-gradient(-45deg, transparent 75%, #ccc 75%);
+                linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.05) 75%);
             background-size: 20px 20px;
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
             padding: 20px;
             object-fit: contain;
+            transition: max-height 0.3s ease, width 0.3s ease;
         }
 
         @media (min-width: 992px) {
@@ -552,12 +553,80 @@
         }
 
         /* Session Editor Styles */
+        /* Customization Panel Styles */
+        .customization-panel {
+            background-color: #f5f5f5;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            margin-top: 20px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .customization-panel.show {
+            display: block;
+        }
+
+        .customization-header {
+            background: linear-gradient(135deg, var(--island-green), var(--victoria-blue));
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .customization-header:hover {
+            background: linear-gradient(135deg, #5fb584, #3aa3d1);
+        }
+
+        .customization-header h4 {
+            margin: 0;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .customization-header h4::before {
+            content: 'tune';
+            font-family: 'Material Symbols Outlined';
+            font-size: 1.3em;
+        }
+
+        .customization-header .toggle-icon {
+            font-family: 'Material Symbols Outlined';
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .customization-header.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .customization-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .customization-content.show {
+            max-height: 2000px;
+        }
+
+        .customization-content-inner {
+            padding: 20px;
+        }
+
         .session-editor-section {
             background-color: #e8f5e9;
             border: 2px solid var(--island-green);
             border-radius: 6px;
-            padding: 20px;
-            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
             display: none;
         }
 
@@ -565,18 +634,58 @@
             display: block;
         }
 
-        .session-editor-section h4 {
-            color: var(--island-green);
-            margin-bottom: 15px;
+        .session-editor-header {
+            background: linear-gradient(135deg, var(--island-green), #5fb584);
+            color: white;
+            padding: 12px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .session-editor-header:hover {
+            background: linear-gradient(135deg, #5fb584, var(--island-green));
+        }
+
+        .session-editor-header h4 {
+            margin: 0;
+            font-size: 1em;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .session-editor-section h4::before {
+        .session-editor-header h4::before {
             content: 'edit_calendar';
             font-family: 'Material Symbols Outlined';
-            font-size: 1.5em;
+            font-size: 1.3em;
+        }
+
+        .session-editor-header .toggle-icon {
+            font-family: 'Material Symbols Outlined';
+            font-size: 1.3em;
+            transition: transform 0.3s ease;
+        }
+
+        .session-editor-header.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .session-editor-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .session-editor-content.show {
+            max-height: 800px;
+        }
+
+        .session-editor-content-inner {
+            padding: 20px;
         }
 
         .session-year-inputs {
@@ -663,8 +772,8 @@
             background-color: #fff8e1;
             border: 2px solid #ffc107;
             border-radius: 6px;
-            padding: 20px;
-            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
             display: none;
         }
 
@@ -672,18 +781,58 @@
             display: block;
         }
 
-        .color-picker-section h4 {
-            color: #f57f17;
-            margin-bottom: 15px;
+        .color-picker-header {
+            background: linear-gradient(135deg, #ffc107, #ffb300);
+            color: #333;
+            padding: 12px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .color-picker-header:hover {
+            background: linear-gradient(135deg, #ffb300, #ffc107);
+        }
+
+        .color-picker-header h4 {
+            margin: 0;
+            font-size: 1em;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .color-picker-section h4::before {
+        .color-picker-header h4::before {
             content: 'palette';
             font-family: 'Material Symbols Outlined';
-            font-size: 1.5em;
+            font-size: 1.3em;
+        }
+
+        .color-picker-header .toggle-icon {
+            font-family: 'Material Symbols Outlined';
+            font-size: 1.3em;
+            transition: transform 0.3s ease;
+        }
+
+        .color-picker-header.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .color-picker-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .color-picker-content.show {
+            max-height: 800px;
+        }
+
+        .color-picker-content-inner {
+            padding: 20px;
         }
 
         .color-picker-inputs {
@@ -769,6 +918,36 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        .customization-download-btn {
+            background: linear-gradient(135deg, var(--island-green), var(--victoria-blue));
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.05em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .customization-download-btn:hover {
+            background: linear-gradient(135deg, var(--england-red), #f57c00);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .customization-download-btn:disabled {
+            background: linear-gradient(135deg, #ccc, #999);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
         .color-info-box {
             background-color: #ffecb3;
             border: 1px solid #ffc107;
@@ -785,6 +964,57 @@
 
         .color-info-box strong {
             color: #e65100;
+        }
+
+        /* Sticky Preview Wrapper */
+        .result-preview-container {
+            position: sticky;
+            top: 20px;
+            z-index: 9;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .result-preview-container.sticky {
+            position: sticky;
+            top: 20px;
+            z-index: 10;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: #f8f9fa;
+            max-height: 50vh;
+            overflow: hidden;
+        }
+
+        .result-preview-container.sticky .preview-image {
+            max-height: calc(50vh - 40px);
+            width: auto;
+            object-fit: contain;
+        }
+
+        .result-preview-container.sticky.light-bg {
+            background: 
+                linear-gradient(45deg, #e0e0e0 25%, transparent 25%), 
+                linear-gradient(-45deg, #e0e0e0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #e0e0e0 75%), 
+                linear-gradient(-45deg, transparent 75%, #e0e0e0 75%), 
+                #ffffff;
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border: 2px solid #ccc;
+        }
+
+        .result-preview-container.sticky.dark-bg {
+            background: 
+                linear-gradient(45deg, #252525 25%, transparent 25%), 
+                linear-gradient(-45deg, #252525 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #252525 75%), 
+                linear-gradient(-45deg, transparent 75%, #252525 75%), 
+                #2a2a2a;
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border: 2px solid #555;
         }
 
         .rules-list {
@@ -1227,6 +1457,74 @@
                     <div class="result-details">
                         <p id="selectionSummary"></p>
                         <div class="download-links" id="downloadLinks"></div>
+                        
+                        <!-- Unified Customization Panel -->
+                        <div class="customization-panel" id="customizationPanel">
+                            <div class="customization-header" id="customizationHeader" onclick="toggleCustomizationPanel()">
+                                <h4>Customise SVG Before Download</h4>
+                                <span class="toggle-icon">expand_more</span>
+                            </div>
+                            <div class="customization-content" id="customizationContent">
+                                <div class="customization-content-inner">
+                                    <!-- Session Editor Section -->
+                                    <div class="session-editor-section" id="sessionEditorSection">
+                                        <div class="session-editor-header" id="sessionEditorHeader" onclick="toggleSessionEditor()">
+                                            <h4>Customise Session Period</h4>
+                                            <span class="toggle-icon">expand_more</span>
+                                        </div>
+                                        <div class="session-editor-content" id="sessionEditorContent">
+                                            <div class="session-editor-content-inner">
+                                                <p>Enter the session years below to customise the session period:</p>
+                                                
+                                                <div class="session-year-inputs">
+                                                    <label for="sessionYear1">Session</label>
+                                                    <input type="number" id="sessionYear1" min="2000" max="2099" step="1" required placeholder="20XX" />
+                                                    <span class="year-separator">–</span>
+                                                    <input type="number" id="sessionYear2" min="2000" max="2099" step="1" required placeholder="20XX" />
+                                                </div>
+                                                
+                                                <div class="session-info-box">
+                                                    <p><strong>💡 Tip:</strong> The SVG format is widely supported and can be opened in:</p>
+                                                    <p style="margin-top: 8px;">• <strong>Vector editing software:</strong> Adobe Illustrator, Inkscape, Affinity Designer, CorelDRAW</p>
+                                                    <p>• <strong>Online design tools:</strong> Canva, Figma, Adobe Express</p>
+                                                    <p>• <strong>Microsoft 365:</strong> Word, PowerPoint, and other Office applications (Insert → Pictures → This Device)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Color Picker Section for Monochrome -->
+                                    <div class="color-picker-section" id="colorPickerSection">
+                                        <div class="color-picker-header" id="colorPickerHeader" onclick="toggleColorPicker()">
+                                            <h4>Customise Monochrome Colour</h4>
+                                            <span class="toggle-icon">expand_more</span>
+                                        </div>
+                                        <div class="color-picker-content" id="colorPickerContent">
+                                            <div class="color-picker-content-inner">
+                                                <p>Choose a custom colour for the monochrome logotype:</p>
+                                                
+                                                <div class="color-picker-inputs">
+                                                    <label for="monochromeColorPicker">Colour:</label>
+                                                    <input type="color" id="monochromeColorPicker" value="#A49B4B" />
+                                                    <input type="text" id="monochromeColorHex" value="#A49B4B" placeholder="#A49B4B" />
+                                                    <button class="color-reset-btn" onclick="resetMonochromeColor()">
+                                                        Reset to Default
+                                                    </button>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Combined Download Button -->
+                                    <button class="customization-download-btn" id="downloadCustomizedBtn" onclick="downloadCustomizedSvg()">
+                                        <span class="material-symbols-outlined">download</span>
+                                        Download Customised SVG
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!-- File Format Guide -->
                         <div class="info-box" style="margin-top: 20px;">
                             <strong>📝 File Format Guide:</strong><br>
@@ -1237,61 +1535,7 @@
                         </div>
                     </div>
                     <div class="result-preview-container">
-                        <div class="preview-image-wrapper">
-                            <img id="previewImage" class="preview-image" alt="Logo Preview" />
-                        </div>
-                        
-                        <!-- Session Editor Section -->
-                        <div class="session-editor-section" id="sessionEditorSection">
-                            <h4>Customise Session Period</h4>
-                            <p>Enter the session years below to generate a customised SVG file with the session period pre-filled:</p>
-                            
-                            <div class="session-year-inputs">
-                                <label for="sessionYear1">Session</label>
-                                <input type="number" id="sessionYear1" min="2000" max="2099" placeholder="20XX" />
-                                <span class="year-separator">–</span>
-                                <input type="number" id="sessionYear2" min="2000" max="2099" placeholder="20XX" />
-                            </div>
-                            
-                            <button class="session-download-btn" id="downloadSessionSvgBtn" onclick="downloadCustomSessionSvg()" disabled>
-                                <span class="material-symbols-outlined">download</span>
-                                Download Customised SVG
-                            </button>
-                            
-                            <div class="session-info-box">
-                                <p><strong>💡 Tip:</strong> The SVG format is widely supported and can be opened in:</p>
-                                <p style="margin-top: 8px;">• <strong>Vector editing software:</strong> Adobe Illustrator, Inkscape, Affinity Designer, CorelDRAW</p>
-                                <p>• <strong>Online design tools:</strong> Canva, Figma, Adobe Express</p>
-                                <p>• <strong>Microsoft 365:</strong> Word, PowerPoint, and other Office applications (Insert → Pictures → This Device)</p>
-                                <p style="margin-top: 8px; font-style: italic;">Using this feature saves you from manually editing the session text in the file.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Color Picker Section for Monochrome -->
-                        <div class="color-picker-section" id="colorPickerSection">
-                            <h4>Customise Monochrome Colour</h4>
-                            <p>Choose a custom colour for the monochrome logotype. The preview will update in real-time:</p>
-                            
-                            <div class="color-picker-inputs">
-                                <label for="monochromeColorPicker">Colour:</label>
-                                <input type="color" id="monochromeColorPicker" value="#A49B4B" />
-                                <input type="text" id="monochromeColorHex" value="#A49B4B" placeholder="#A49B4B" />
-                                <button class="color-reset-btn" onclick="resetMonochromeColor()">
-                                    Reset to Default
-                                </button>
-                            </div>
-                            
-                            <button class="color-download-btn" id="downloadColorSvgBtn" onclick="downloadCustomColorSvg()">
-                                <span class="material-symbols-outlined">download</span>
-                                Download Customised SVG
-                            </button>
-                            
-                            <div class="color-info-box">
-                                <p><strong>💡 Tip:</strong> The default monochrome colour is <strong>#A49B4B</strong> (olive gold). You can customise it to match your project's colour scheme.</p>
-                                <p style="margin-top: 8px;">• The SVG format preserves colour information and can be further edited in vector software</p>
-                                <p>• For session variants, you can customise both the colour and session period</p>
-                            </div>
-                        </div>
+                        <img id="previewImage" class="preview-image" alt="Logo Preview" />
                     </div>
                 </div>
 
@@ -2086,27 +2330,6 @@
                 previewEl.src = svgPath;
                 previewEl.style.display = 'block';
                 
-                // Set background based on color variant
-                if (selection.color === 'negative' || selection.color === 'greyscale-negative') {
-                    // Dark checkerboard pattern for negative variants
-                    previewEl.style.background = 
-                        'linear-gradient(45deg, #2a2a2a 25%, transparent 25%), ' +
-                        'linear-gradient(-45deg, #2a2a2a 25%, transparent 25%), ' +
-                        'linear-gradient(45deg, transparent 75%, #2a2a2a 75%), ' +
-                        'linear-gradient(-45deg, transparent 75%, #2a2a2a 75%), ' +
-                        '#1a1a1a';
-                    previewEl.style.backgroundSize = '20px 20px';
-                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
-                } else {
-                    previewEl.style.background = 
-                        'linear-gradient(45deg, #ccc 25%, transparent 25%), ' +
-                        'linear-gradient(-45deg, #ccc 25%, transparent 25%), ' +
-                        'linear-gradient(45deg, transparent 75%, #ccc 75%), ' +
-                        'linear-gradient(-45deg, transparent 75%, #ccc 75%)';
-                    previewEl.style.backgroundSize = '20px 20px';
-                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
-                }
-                
                 previewEl.onerror = function () {
                     this.style.display = 'none';
                     summaryEl.innerHTML += '<br><em style="color: #d32f2f;">Preview not available for this combination.</em>';
@@ -2153,27 +2376,6 @@
                 const svgPath = `${versionDir}/SVG/${filename}.svg`;
                 previewEl.src = svgPath;
                 previewEl.style.display = 'block';
-                
-                // Set background based on color variant
-                if (selection.color === 'negative' || selection.color === 'greyscale-negative') {
-                    // Dark checkerboard pattern for negative variants
-                    previewEl.style.background = 
-                        'linear-gradient(45deg, #2a2a2a 25%, transparent 25%), ' +
-                        'linear-gradient(-45deg, #2a2a2a 25%, transparent 25%), ' +
-                        'linear-gradient(45deg, transparent 75%, #2a2a2a 75%), ' +
-                        'linear-gradient(-45deg, transparent 75%, #2a2a2a 75%), ' +
-                        '#1a1a1a';
-                    previewEl.style.backgroundSize = '20px 20px';
-                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
-                } else {
-                    previewEl.style.background = 
-                        'linear-gradient(45deg, #ccc 25%, transparent 25%), ' +
-                        'linear-gradient(-45deg, #ccc 25%, transparent 25%), ' +
-                        'linear-gradient(45deg, transparent 75%, #ccc 75%), ' +
-                        'linear-gradient(-45deg, transparent 75%, #ccc 75%)';
-                    previewEl.style.backgroundSize = '20px 20px';
-                    previewEl.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
-                }
                 
                 previewEl.onerror = function () {
                     this.style.display = 'none';
@@ -2241,6 +2443,16 @@
 
             resultBox.classList.add('show');
             resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Update preview background based on color variant
+            const previewContainer = document.querySelector('.result-preview-container');
+            previewContainer.classList.remove('light-bg', 'dark-bg');
+            
+            if (selection.color === 'negative' || selection.color === 'greyscale-negative') {
+                previewContainer.classList.add('sticky', 'dark-bg');
+            } else {
+                previewContainer.classList.add('sticky');
+            }
         }
 
 
@@ -2328,8 +2540,111 @@
         // Color Picker functionality
         const monochromeColorPicker = document.getElementById('monochromeColorPicker');
         const monochromeColorHex = document.getElementById('monochromeColorHex');
-        const downloadColorBtn = document.getElementById('downloadColorSvgBtn');
+        const downloadCustomizedBtn = document.getElementById('downloadCustomizedBtn');
         const DEFAULT_MONOCHROME_COLOR = '#A49B4B';
+        
+        // Toggle customization panel
+        function toggleCustomizationPanel() {
+            const content = document.getElementById('customizationContent');
+            const header = document.getElementById('customizationHeader');
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                header.classList.remove('expanded');
+            } else {
+                content.classList.add('show');
+                header.classList.add('expanded');
+            }
+        }
+        
+        // Toggle session editor section
+        function toggleSessionEditor() {
+            const content = document.getElementById('sessionEditorContent');
+            const header = document.getElementById('sessionEditorHeader');
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                header.classList.remove('expanded');
+            } else {
+                content.classList.add('show');
+                header.classList.add('expanded');
+                updateStickyPreview();
+            }
+        }
+        
+        // Toggle color picker section
+        function toggleColorPicker() {
+            const content = document.getElementById('colorPickerContent');
+            const header = document.getElementById('colorPickerHeader');
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                header.classList.remove('expanded');
+            } else {
+                content.classList.add('show');
+                header.classList.add('expanded');
+                updateStickyPreview();
+            }
+        }
+        
+        // Update sticky preview based on customizer state
+        function updateStickyPreview() {
+            const previewContainer = document.querySelector('.result-preview-container');
+            const sessionContent = document.getElementById('sessionEditorContent');
+            const colorContent = document.getElementById('colorPickerContent');
+            
+            const isAnyExpanded = sessionContent?.classList.contains('show') || 
+                                 colorContent?.classList.contains('show');
+            
+            // Only add sticky when expanded, never remove it
+            // Leave background as-is
+            if (isAnyExpanded) {
+                previewContainer.classList.add('sticky');
+            }
+        }
+        
+        // Update preview background based on custom color
+        function updatePreviewBackground() {
+            const previewContainer = document.querySelector('.result-preview-container');
+            
+            if (!previewContainer.classList.contains('sticky')) {
+                return;
+            }
+            
+            // Get the current color if monochrome is selected
+            if (selection.color === 'monochrome') {
+                const customColor = monochromeColorPicker.value;
+                const brightness = getColorBrightness(customColor);
+                
+                // Remove all background classes
+                previewContainer.classList.remove('light-bg', 'dark-bg');
+                
+                // INVERTED LOGIC: Light logotype colors need dark backgrounds for contrast
+                if (brightness > 180) {
+                    // Light logotype -> dark background
+                    previewContainer.classList.add('dark-bg');
+                } else if (brightness < 80) {
+                    // Dark logotype -> light background
+                    previewContainer.classList.add('light-bg');
+                }
+                // For medium brightness, leave background as-is (default checkerboard)
+            }
+            // For non-monochrome, leave background as-is
+        }
+        
+        // Calculate brightness of a color
+        function getColorBrightness(hexColor) {
+            // Remove # if present
+            const hex = hexColor.replace('#', '');
+            
+            // Convert to RGB
+            const r = parseInt(hex.substr(0, 2), 16);
+            const g = parseInt(hex.substr(2, 2), 16);
+            const b = parseInt(hex.substr(4, 2), 16);
+            
+            // Calculate perceived brightness using weighted formula
+            return (r * 299 + g * 587 + b * 114) / 1000;
+        }
 
         // Set default years based on current date
         function setDefaultSessionYears() {
@@ -2355,29 +2670,60 @@
             const year1 = parseInt(sessionYear1Input.value);
             const year2 = parseInt(sessionYear2Input.value);
             
+            // Clear custom validity messages first
+            sessionYear1Input.setCustomValidity('');
+            sessionYear2Input.setCustomValidity('');
+            
+            // Validate year1
+            if (isNaN(year1) || sessionYear1Input.value === '') {
+                sessionYear1Input.setCustomValidity('Please enter a valid starting year');
+            } else if (year1 < 2000 || year1 > 2099) {
+                sessionYear1Input.setCustomValidity('Starting year must be between 2000 and 2099');
+            }
+            
+            // Validate year2
+            if (isNaN(year2) || sessionYear2Input.value === '') {
+                sessionYear2Input.setCustomValidity('Please enter a valid ending year');
+            } else if (year2 < 2000 || year2 > 2099) {
+                sessionYear2Input.setCustomValidity('Ending year must be between 2000 and 2099');
+            } else if (!isNaN(year1) && year2 <= year1) {
+                sessionYear2Input.setCustomValidity('Ending year must be greater than starting year');
+            }
+            
             const isValid = !isNaN(year1) && !isNaN(year2) && 
                            year1 >= 2000 && year1 <= 2099 &&
                            year2 >= 2000 && year2 <= 2099 &&
                            year2 > year1;
             
-            downloadSessionBtn.disabled = !isValid;
+            // Update button states
+            const downloadBtn = document.getElementById('downloadCustomizedBtn');
+            
+            if (downloadBtn) {
+                downloadBtn.disabled = !isValid;
+            }
+            
             return isValid;
         }
-
+        
         // Add event listeners for year inputs
         sessionYear1Input.addEventListener('input', function() {
             validateSessionYears();
             updatePreviewWithCustomizations();
+            // Report validity for HTML5 validation UI
+            sessionYear1Input.reportValidity();
         });
         sessionYear2Input.addEventListener('input', function() {
             validateSessionYears();
             updatePreviewWithCustomizations();
+            // Report validity for HTML5 validation UI
+            sessionYear2Input.reportValidity();
         });
         
         // Add event listeners for color picker
         monochromeColorPicker.addEventListener('input', function() {
             monochromeColorHex.value = monochromeColorPicker.value.toUpperCase();
             updatePreviewWithCustomizations();
+            updatePreviewBackground();
         });
         
         monochromeColorHex.addEventListener('input', function() {
@@ -2390,6 +2736,7 @@
             if (/^#[0-9A-Fa-f]{6}$/.test(hexValue)) {
                 monochromeColorPicker.value = hexValue;
                 updatePreviewWithCustomizations();
+                updatePreviewBackground();
             }
         });
         
@@ -2398,25 +2745,27 @@
             monochromeColorPicker.value = DEFAULT_MONOCHROME_COLOR;
             monochromeColorHex.value = DEFAULT_MONOCHROME_COLOR;
             updatePreviewWithCustomizations();
+            updatePreviewBackground();
         }
 
-        // Show/hide session editor based on selection
-        function updateSessionEditorVisibility() {
+        // Show/hide customization panel and its sections
+        function updateCustomizationPanel() {
+            const customizationPanel = document.getElementById('customizationPanel');
             const sessionEditorSection = document.getElementById('sessionEditorSection');
+            const colorPickerSection = document.getElementById('colorPickerSection');
             
-            if (selection.session === true) {
+            const showSession = selection.session === true;
+            const showColor = selection.color === 'monochrome';
+            
+            // Update individual section visibility
+            if (showSession) {
                 sessionEditorSection.classList.add('show');
                 setDefaultSessionYears();
             } else {
                 sessionEditorSection.classList.remove('show');
             }
-        }
-        
-        // Show/hide color picker based on selection
-        function updateColorPickerVisibility() {
-            const colorPickerSection = document.getElementById('colorPickerSection');
             
-            if (selection.color === 'monochrome') {
+            if (showColor) {
                 colorPickerSection.classList.add('show');
                 // Reset to default color when showing
                 monochromeColorPicker.value = DEFAULT_MONOCHROME_COLOR;
@@ -2424,6 +2773,22 @@
             } else {
                 colorPickerSection.classList.remove('show');
             }
+            
+            // Show panel if either section should be visible
+            if (showSession || showColor) {
+                customizationPanel.classList.add('show');
+            } else {
+                customizationPanel.classList.remove('show');
+            }
+        }
+        
+        // Legacy function names for backward compatibility
+        function updateSessionEditorVisibility() {
+            updateCustomizationPanel();
+        }
+        
+        function updateColorPickerVisibility() {
+            updateCustomizationPanel();
         }
         
         // Update preview with customizations (session years and/or color)
@@ -2476,36 +2841,54 @@
                     const year2 = sessionYear2Input.value;
                     
                     if (year1 && year2 && parseInt(year2) > parseInt(year1)) {
-                        const newSessionText = `Session ${year1}–${year2}`;
+                        // Helper function to convert year to Chinese numerals
+                        const yearToChinese = (year) => {
+                            const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+                            return year.toString().split('').map(d => digits[parseInt(d)]).join('');
+                        };
                         
-                        // Replace session text patterns
+                        const newSessionTextEn = `Session ${year1}–${year2}`;
+                        const newSessionTextZh = `${yearToChinese(year1)}至${yearToChinese(year2)}年度`;
+                        
+                        // Replace English session text patterns
                         svgContent = svgContent.replace(
                             />Session 20  –20  </g,
-                            `>${newSessionText}<`
+                            `>${newSessionTextEn}<`
                         );
                         svgContent = svgContent.replace(
                             />Session\s+20\d{0,2}\s*[–\-]\s*20\d{0,2}\s*</g,
-                            `>${newSessionText}<`
+                            `>${newSessionTextEn}<`
                         );
                         svgContent = svgContent.replace(
                             />Session\s+\d{4}[–\-]\d{4}</g,
-                            `>${newSessionText}<`
+                            `>${newSessionTextEn}<`
                         );
+                        
+                        // Replace Chinese session text patterns
+                        // Pattern: 二零　　至二零　　年度 (with various whitespace)
+                        svgContent = svgContent.replace(
+                            />二零[\s零　]*至二零[\s零　]*年度</g,
+                            `>${newSessionTextZh}<`
+                        );
+                        // Pattern: 二零XX至二零XX年度 or similar variations
+                        svgContent = svgContent.replace(
+                            />二零[零零一二三四五六七八九]*至二零[零零一二三四五六七八九]*年度</g,
+                            `>${newSessionTextZh}<`
+                        );
+                        
                         modified = true;
                     }
                 }
                 
-                // Apply color customization if monochrome
+                // Apply color customization if monochrome (always apply, regardless of whether it's default)
                 if (selection.color === 'monochrome') {
                     const customColor = monochromeColorPicker.value;
-                    if (customColor && customColor.toUpperCase() !== DEFAULT_MONOCHROME_COLOR) {
-                        // Replace the monochrome color (various case formats found in files)
-                        svgContent = svgContent.replace(/#a49b4b/gi, customColor);
-                        svgContent = svgContent.replace(/#a39b4b/gi, customColor); // Also handle slight variation
-                        svgContent = svgContent.replace(/#A49B4B/gi, customColor);
-                        svgContent = svgContent.replace(/#A39B4B/gi, customColor);
-                        modified = true;
-                    }
+                    // Replace the monochrome color (various case formats found in files)
+                    svgContent = svgContent.replace(/#a49b4b/gi, customColor);
+                    svgContent = svgContent.replace(/#a39b4b/gi, customColor); // Also handle slight variation
+                    svgContent = svgContent.replace(/#A49B4B/gi, customColor);
+                    svgContent = svgContent.replace(/#A39B4B/gi, customColor);
+                    modified = true;
                 }
                 
                 if (modified) {
@@ -2579,28 +2962,40 @@
                 
                 let svgContent = await response.text();
                 
-                // Create the new session text
-                // The original format in the SVG is "Session 20  –20  " (with spaces for digits)
-                // We need to replace it with the actual years
-                const newSessionText = `Session ${year1}–${year2}`;
+                // Helper function to convert year to Chinese numerals
+                const yearToChinese = (year) => {
+                    const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+                    return year.toString().split('').map(d => digits[parseInt(d)]).join('');
+                };
                 
-                // Replace the tspan content - handle various patterns
-                // Pattern 1: Full placeholder text
+                // Create the new session text in both languages
+                const newSessionTextEn = `Session ${year1}–${year2}`;
+                const newSessionTextZh = `${yearToChinese(year1)}至${yearToChinese(year2)}年度`;
+                
+                // Replace English session text patterns
                 svgContent = svgContent.replace(
                     />Session 20  –20  </g,
-                    `>${newSessionText}<`
+                    `>${newSessionTextEn}<`
                 );
-                
-                // Pattern 2: Different spacing variations
                 svgContent = svgContent.replace(
                     />Session\s+20\d{0,2}\s*[–\-]\s*20\d{0,2}\s*</g,
-                    `>${newSessionText}<`
+                    `>${newSessionTextEn}<`
                 );
-                
-                // Pattern 3: Legacy format with different date format (e.g., "Session 2017–2018")
                 svgContent = svgContent.replace(
                     />Session\s+\d{4}[–\-]\d{4}</g,
-                    `>${newSessionText}<`
+                    `>${newSessionTextEn}<`
+                );
+                
+                // Replace Chinese session text patterns
+                // Pattern: 二零　　至二零　　年度 (with various whitespace)
+                svgContent = svgContent.replace(
+                    />二零[\s零　]*至二零[\s零　]*年度</g,
+                    `>${newSessionTextZh}<`
+                );
+                // Pattern: 二零XX至二零XX年度 or similar variations
+                svgContent = svgContent.replace(
+                    />二[零零][零零一二三四五六七八九]*至二[零零][零零一二三四五六七八九]*年度</g,
+                    `>${newSessionTextZh}<`
                 );
                 
                 // Create a new filename with the session years
@@ -2624,6 +3019,137 @@
                 console.error('Error downloading customised SVG:', error);
                 alert('Error generating customised SVG. Please try downloading the standard SVG and edit it manually.');
             }
+        }
+        
+        // Combined download function for all customizations
+        async function downloadCustomizedSvg() {
+            const hasSessionCustomization = selection.session === true && validateSessionYears();
+            const hasColorCustomization = selection.color === 'monochrome';
+            
+            if (!hasSessionCustomization && !hasColorCustomization) {
+                alert('No customizations to apply.');
+                return;
+            }
+            
+            // Build the SVG file path
+            let svgPath;
+            let baseFilename;
+            
+            if (selection.version === 'Legacy') {
+                const versionDir = versionMap[selection.version];
+                let isNegative = false;
+                let actualColor = selection.color;
+                
+                if (selection.color === 'negative') {
+                    isNegative = true;
+                    actualColor = 'standard';
+                } else if (selection.color === 'greyscale-negative') {
+                    isNegative = true;
+                    actualColor = 'greyscale';
+                }
+                
+                baseFilename = buildLegacyFilename(actualColor, selection.arrangement, isNegative, selection.language, selection.session);
+                svgPath = `${versionDir}/SVG/${baseFilename}.svg`;
+            } else {
+                const versionDir = versionMap[selection.version];
+                const prefix = getLogoPrefix(selection.version);
+                const sessionSuffix = selection.session ? '-session' : '';
+                baseFilename = `${prefix}${selection.arrangement}-${selection.color}-${selection.language}${sessionSuffix}`;
+                svgPath = `${versionDir}/SVG/${baseFilename}.svg`;
+            }
+            
+            try {
+                // Fetch the SVG file
+                const response = await fetch(svgPath);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch SVG file');
+                }
+                
+                let svgContent = await response.text();
+                let filenameSuffix = '';
+                
+                // Apply session year customization if applicable
+                if (hasSessionCustomization) {
+                    const year1 = sessionYear1Input.value;
+                    const year2 = sessionYear2Input.value;
+                    
+                    // Helper function to convert year to Chinese numerals
+                    const yearToChinese = (year) => {
+                        const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+                        return year.toString().split('').map(d => digits[parseInt(d)]).join('');
+                    };
+                    
+                    const newSessionTextEn = `Session ${year1}–${year2}`;
+                    const newSessionTextZh = `${yearToChinese(year1)}至${yearToChinese(year2)}年度`;
+                    
+                    // Replace English session text patterns
+                    svgContent = svgContent.replace(
+                        />Session 20  –20  </g,
+                        `>${newSessionTextEn}<`
+                    );
+                    svgContent = svgContent.replace(
+                        />Session\s+20\d{0,2}\s*[–\-]\s*20\d{0,2}\s*</g,
+                        `>${newSessionTextEn}<`
+                    );
+                    svgContent = svgContent.replace(
+                        />Session\s+\d{4}[–\-]\d{4}</g,
+                        `>${newSessionTextEn}<`
+                    );
+                    
+                    // Replace Chinese session text patterns
+                    svgContent = svgContent.replace(
+                        />二零[\s零　]*至二零[\s零　]*年度</g,
+                        `>${newSessionTextZh}<`
+                    );
+                    svgContent = svgContent.replace(
+                        />二[零零][零零一二三四五六七八九]*至二[零零][零零一二三四五六七八九]*年度</g,
+                        `>${newSessionTextZh}<`
+                    );
+                    
+                    filenameSuffix += `_Session-${year1}-${year2}`;
+                }
+                
+                // Apply color customization if applicable
+                if (hasColorCustomization) {
+                    const customColor = monochromeColorPicker.value;
+                    
+                    // Replace the monochrome color (various case formats found in files)
+                    svgContent = svgContent.replace(/#a49b4b/gi, customColor);
+                    svgContent = svgContent.replace(/#a39b4b/gi, customColor);
+                    svgContent = svgContent.replace(/#A49B4B/gi, customColor);
+                    svgContent = svgContent.replace(/#A39B4B/gi, customColor);
+                    
+                    const colorHex = customColor.replace('#', '').toUpperCase();
+                    filenameSuffix += `_Colour-${colorHex}`;
+                }
+                
+                // Create a new filename
+                const cleanBaseFilename = baseFilename.replace('-session', '');
+                const newFilename = `${cleanBaseFilename}${filenameSuffix}.svg`;
+                
+                // Create a blob and download link
+                const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(blob);
+                
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = newFilename;
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // Clean up the object URL
+                URL.revokeObjectURL(url);
+                
+            } catch (error) {
+                console.error('Error downloading customised SVG:', error);
+                alert('Error generating customised SVG. Please try downloading the standard SVG and edit it manually.');
+            }
+        }
+        
+        // Legacy download functions (kept for backward compatibility)
+        async function downloadCustomSessionSvg() {
+            await downloadCustomizedSvg();
         }
         
         // Download customised color SVG (for monochrome logotypes)
@@ -2672,20 +3198,37 @@
                     const year2 = sessionYear2Input.value;
                     
                     if (year1 && year2 && parseInt(year2) > parseInt(year1)) {
-                        const newSessionText = `Session ${year1}–${year2}`;
+                        // Helper function to convert year to Chinese numerals
+                        const yearToChinese = (year) => {
+                            const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+                            return year.toString().split('').map(d => digits[parseInt(d)]).join('');
+                        };
                         
-                        // Replace session text patterns
+                        const newSessionTextEn = `Session ${year1}–${year2}`;
+                        const newSessionTextZh = `${yearToChinese(year1)}至${yearToChinese(year2)}年度`;
+                        
+                        // Replace English session text patterns
                         svgContent = svgContent.replace(
                             />Session 20  –20  </g,
-                            `>${newSessionText}<`
+                            `>${newSessionTextEn}<`
                         );
                         svgContent = svgContent.replace(
                             />Session\s+20\d{0,2}\s*[–\-]\s*20\d{0,2}\s*</g,
-                            `>${newSessionText}<`
+                            `>${newSessionTextEn}<`
                         );
                         svgContent = svgContent.replace(
                             />Session\s+\d{4}[–\-]\d{4}</g,
-                            `>${newSessionText}<`
+                            `>${newSessionTextEn}<`
+                        );
+                        
+                        // Replace Chinese session text patterns
+                        svgContent = svgContent.replace(
+                            />二零[\s零　]*至二零[\s零　]*年度</g,
+                            `>${newSessionTextZh}<`
+                        );
+                        svgContent = svgContent.replace(
+                            />二[零零][零零一二三四五六七八九]*至二[零零][零零一二三四五六七八九]*年度</g,
+                            `>${newSessionTextZh}<`
                         );
                     }
                 }
